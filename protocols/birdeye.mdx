@@ -1,0 +1,216 @@
+---
+title: "Birdeye"
+description: ""
+icon: "chart-line"
+---
+
+
+<img src="/images/birdeye-logo.png" alt="Birdeye Logo" style={{ height: '60px', marginBottom: '1rem', display: 'block' }}/>
+
+Birdeye is a comprehensive real-time token price and analytics platform for Solana and other blockchains. It provides accurate prices, live trading activity, trending tokens, and liquidity insights through powerful APIs.
+
+## Overview
+
+Birdeye aggregates data across multiple decentralized exchanges (DEXs) to provide:
+- **Real-time token prices**: Ultra-fast price updates across all Solana tokens
+- **Market analytics**: Market cap, liquidity, trading volume, and trends
+- **Wallet analytics**: Portfolio tracking, PnL calculations, and transaction history
+- **Multi-chain support**: Solana, Ethereum, Sui, BNB Smart Chain, and more
+- **Comprehensive APIs**: Easy integration for price feeds, analytics, and wallet data
+
+## APIs
+
+### Tokens
+
+<Expandable title="Token Price API">
+
+| API Name | Type | Path | Description |
+|----------|------|------|-------------|
+| Get Token Price | GET | `/token/price` | Get current token price and market data |
+| Get Token Price History | GET | `/token/pricehistory` | Get historical price data |
+| Get Multiple Token Prices | GET | `/token/multiple-price` | Get prices for multiple tokens |
+
+</Expandable>
+
+<Expandable title="Token Analytics API">
+
+| API Name | Type | Path | Description |
+|----------|------|------|-------------|
+| Get Token Overview | GET | `/token/overview` | Market cap, liquidity, volume, holders |
+| Get Token Security | GET | `/token/security` | Security analysis and risk scores |
+| Get Token Holder Distribution | GET | `/token/holder-distribution` | Holder distribution data |
+
+</Expandable>
+
+<Expandable title="NFT API">
+
+| API Name | Type | Path | Description |
+|----------|------|------|-------------|
+| Get NFT Collection Stats | GET | `/nft/collection/stats` | Floor price, volume, holders |
+| Get NFT Token Info | GET | `/nft/token/info` | NFT metadata, owner, price |
+
+</Expandable>
+
+### Transactions
+
+<Expandable title="Wallet Transactions API">
+
+| API Name | Type | Path | Description |
+|----------|------|------|-------------|
+| Get Wallet Transactions | GET | `/wallet/transactions` | Get transaction history for a wallet |
+| Get Wallet First Transaction Funded | GET | `/wallet/first-tx-funded` | Get first funding event |
+
+</Expandable>
+
+### Webhooks
+
+<Expandable title="Price Webhooks">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Token Price Alerts | Webhook | Receive notifications when token prices hit thresholds |
+| Market Event Webhooks | Webhook | Get notified of significant market events |
+
+</Expandable>
+
+### Streaming
+
+<Expandable title="Price Streams">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Token Price Streams | WebSocket | Real-time price updates via WebSocket |
+| Market Data Streams | WebSocket | Stream market analytics and trends |
+
+</Expandable>
+
+### Wallet Analytics
+
+<Expandable title="Wallet Portfolio API">
+
+| API Name | Type | Path | Description |
+|----------|------|------|-------------|
+| Get Wallet Portfolio | GET | `/wallet/portfolio` | Token holdings and portfolio breakdown |
+| Get Wallet PnL | GET | `/wallet/pnl` | Realized and unrealized profit/loss, trade counts |
+
+</Expandable>
+
+### Market Data
+
+<Expandable title="Market Data API">
+
+| API Name | Type | Path | Description |
+|----------|------|------|-------------|
+| Get Trending Tokens | GET | `/defi/trending` | Trending tokens with metrics |
+| Get Token List | GET | `/defi/tokenlist` | List of tokens with basic info |
+| Get DEX Pairs | GET | `/defi/pairs` | Trading pairs and liquidity pools |
+
+</Expandable>
+
+## Services
+
+### Real-time Price Feeds
+
+Ultra-fast price updates for all Solana tokens:
+- Sub-second price updates
+- Multi-DEX price aggregation
+- Historical price data
+- Price alerts and notifications
+
+### Wallet Analytics Dashboard
+
+Comprehensive wallet tracking and analytics:
+- Portfolio value tracking
+- PnL calculations (realized and unrealized)
+- Transaction history
+- Token holding analysis
+- Cashflow tracking
+
+### Market Analytics
+
+Advanced market insights:
+- Trending tokens
+- Market cap rankings
+- Liquidity analysis
+- Volume tracking
+- Holder distribution
+
+### Multi-chain Support
+
+Birdeye supports multiple blockchains:
+- Solana
+- Ethereum
+- Sui
+- BNB Smart Chain
+- Arbitrum
+- Avalanche
+- Base
+- Optimism
+- Polygon
+- zkSync Era
+
+## SDKs & Clients
+
+### JavaScript/TypeScript
+
+**Package**: `@birdeye/birdeye-api` or `birdeye-api`
+
+```bash
+npm install birdeye-api
+```
+
+**Usage**:
+```javascript
+import { BirdeyeAPI } from 'birdeye-api';
+
+const api = new BirdeyeAPI('YOUR_API_KEY');
+const price = await api.getTokenPrice('token_address');
+```
+
+### Python
+
+**Package**: `birdeye-api`
+
+```bash
+pip install birdeye-api
+```
+
+**Usage**:
+```python
+from birdeye import BirdeyeAPI
+
+api = BirdeyeAPI('YOUR_API_KEY')
+price = api.get_token_price('token_address')
+```
+
+### REST API
+
+Direct REST API access with any HTTP client:
+- Base URL: `https://public-api.birdeye.so`
+- Authentication: API key in headers
+- Documentation: Available in API docs
+
+## Getting Started
+
+1. **Sign up** at [birdeye.so](https://birdeye.so)
+2. **Get your API key** from the dashboard
+3. **Choose your plan** (free tier available)
+4. **Start building** with Birdeye APIs
+
+<CardGroup cols={2}>
+  <Card
+    title="API Documentation"
+    icon="code"
+    href="https://docs.birdeye.so"
+  >
+    Complete Birdeye API reference
+  </Card>
+  <Card
+    title="Dashboard"
+    icon="chart-line"
+    href="https://birdeye.so"
+  >
+    Access your Birdeye account
+  </Card>
+</CardGroup>
+

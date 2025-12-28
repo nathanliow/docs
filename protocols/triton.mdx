@@ -1,0 +1,107 @@
+---
+title: "Triton"
+description: ""
+icon: "cloud-bolt"
+---
+
+
+<img src="/images/triton-logo.svg" alt="Triton Logo" style={{ height: '60px', marginBottom: '1rem', display: 'block' }}/>
+
+Triton is a high-performance Solana infrastructure provider focused on ultra-reliable RPC, block production connectivity, and high-throughput transaction bandwidth.
+
+## Overview
+
+Triton provides:
+
+- High-throughput Solana RPC endpoints
+- Low-latency access to Solana validators and block engines
+- Turnkey access to common Solana APIs (Jupiter, Metaplex, etc.) via a single endpoint
+- Advanced routing and global infrastructure for resilient dApps
+
+## APIs
+
+### Tokens
+
+APIs and routes for token data via Triton-backed RPC and partner integrations:
+
+- Standard Solana token RPC (via `getTokenAccountsByOwner`, `getAccountInfo`, etc.)
+- Token metadata and balances through downstream providers configured on Triton
+
+### Transactions
+
+APIs for sending and inspecting transactions:
+
+- `sendTransaction` via Triton RPC endpoints
+- `getTransaction` and `getBlock` for transaction and block inspection
+- High-throughput submission paths for latency-sensitive flows
+
+### Webhooks
+
+Triton commonly integrates with external webhook services and indexers; typical patterns include:
+
+- Transaction status notifications
+- Account change notifications
+- Program event notifications
+
+### Streaming
+
+Triton can be used with Solana WebSocket subscriptions for streaming:
+
+- Account change subscriptions
+- Program logs and events
+- Slot and block notifications
+
+## Triton-specific capabilities
+
+- Optimized routing to Solana validators
+- Support for MEV / block-engine style integrations
+- Stake-weighted or priority transaction bandwidth via Triton partners
+
+## SDKs & Clients
+
+
+<img src="/images/triton-logo.svg" alt="Triton Logo" style={{ height: '60px', marginBottom: '1rem', display: 'block' }}/>
+
+Triton is typically consumed via standard Solana clients pointed at Triton endpoints.
+
+### JavaScript/TypeScript
+
+Use `@solana/web3.js` with a Triton RPC URL:
+
+```bash
+npm install @solana/web3.js
+```
+
+```ts
+import { Connection } from '@solana/web3.js';
+
+const connection = new Connection('https://rpc.triton.one/YOUR_KEY');
+// Use standard Solana RPC methods against Triton infrastructure
+```
+
+### Python
+
+Use `solana-py` with a Triton endpoint:
+
+```bash
+pip install solana
+```
+
+```python
+from solana.rpc.api import Client
+
+client = Client('https://rpc.triton.one/YOUR_KEY')
+# Use standard Solana RPC methods against Triton
+```
+
+### REST / WebSocket
+
+- **REST/RPC**: Use your Triton HTTPS endpoint for JSON-RPC
+- **WebSocket**: Use the corresponding `wss://` endpoint for subscriptions
+
+## Getting Started
+
+1. Contact Triton or sign up via their site for access
+2. Obtain your Triton RPC endpoint and credentials
+3. Point your Solana client (web3.js, solana-py, etc.) at the Triton URL
+4. Start sending traffic through Triton for higher reliability and performance

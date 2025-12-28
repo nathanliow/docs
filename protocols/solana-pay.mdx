@@ -1,0 +1,100 @@
+---
+title: "Solana Pay"
+description: ""
+icon: "credit-card"
+---
+
+<img src="/images/solana-logo.svg" alt="Solana Logo" style={{ height: '60px', marginBottom: '1rem', display: 'block' }}/>
+
+Solana Pay is an open, free-to-use payments framework built on Solana that enables developers to incorporate decentralized payments into their apps and services. Solana Pay provides instant transaction settlement with near-zero fees, making it ideal for merchant-to-consumer payments.
+
+## Overview
+
+Solana Pay provides developers with a standard protocol for decentralized payments:
+
+- **Instant Settlement**: Transactions confirmed in less than a second
+- **Near-Zero Fees**: Average transaction cost of $0.0005
+- **Direct Payments**: Merchant-to-consumer payment rail without intermediaries
+- **Shopify Integration**: Available as an approved app integration on Shopify
+- **Open Standard**: Free-to-use protocol for commerce on Solana
+- **Energy Efficient**: Carbon neutral network with minimal energy usage
+
+## SDKs & Clients
+
+### JavaScript/TypeScript
+
+The Solana Pay JavaScript SDK enables developers to accept payments in web applications.
+
+**Package**: `@solana/pay`
+
+**Installation**:
+```bash
+npm install @solana/pay
+```
+
+**Usage**:
+```typescript
+import { createQR } from '@solana/pay';
+
+// Create payment request QR code
+const qr = createQR({
+  recipient: merchantAddress,
+  amount: new Decimal(10),
+  label: 'Payment for goods',
+  message: 'Thank you for your purchase',
+  memo: 'Order #12345'
+});
+```
+
+### Point of Sale App
+
+Run the open-source Solana Pay Point of Sale app to accept payments in-person:
+
+- Open-source implementation
+- In-person payment acceptance
+- Available on GitHub
+
+## Supporting Wallets
+
+Solana Pay is supported by multiple wallets:
+
+- **Phantom** (iOS, Android)
+- **Solflare** (iOS, Android)
+- **Glow** (iOS, Android)
+- **Decaf Wallet** (iOS, Android)
+- **Espresso Cash** (iOS, Android)
+- **Ottr** (iOS, Android)
+- **Ultimate** (iOS, Android)
+- **Tiplink** (Web)
+
+## Getting Started
+
+1. **Visit** [solanapay.com](https://solanapay.com)
+2. **Read the docs** at [docs.solanapay.com](https://docs.solanapay.com)
+3. **Install the SDK** with `npm install @solana/pay`
+4. **Start accepting** payments in your application
+
+<CardGroup cols={3}>
+  <Card
+    title="Documentation"
+    icon="book"
+    href="https://docs.solanapay.com"
+  >
+    Complete Solana Pay documentation
+  </Card>
+  <Card
+    title="GitHub"
+    icon="code-branch"
+    href="https://github.com/solana-foundation/solana-pay"
+  >
+    Solana Pay repository
+  </Card>
+  <Card
+    title="Website"
+    icon="globe"
+    href="https://solanapay.com"
+  >
+    Solana Pay website
+  </Card>
+</CardGroup>
+

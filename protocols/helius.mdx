@@ -1,0 +1,316 @@
+---
+title: "Helius"
+description: ""
+icon: "server"
+---
+
+<img 
+  src="/images/helius-icon.svg" 
+  alt="Helius Logo" 
+  style={{ height: '60px', marginBottom: '1rem', display: 'block' }}
+/>
+
+Helius is a comprehensive Solana infrastructure provider offering RPC endpoints, enhanced APIs, WebSocket services, and dedicated node solutions.
+
+## Overview
+
+Helius provides developers with powerful infrastructure tools to build on Solana. Their platform includes:
+
+- **Enhanced RPC Endpoints**: High-performance RPC access with advanced features
+- **Enhanced APIs**: Pre-indexed data and transaction parsing
+- **WebSocket Services**: Real-time data streaming via Laser Stream
+- **Dedicated Nodes**: Custom node infrastructure for enterprise needs
+
+## APIs
+
+### Tokens
+
+<Expandable title="Digital Asset Standard (DAS)">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| getAsset | POST | Retrieve NFT and token metadata |
+| getAssetBatch | POST | Fetch multiple assets in one request |
+| getAssetProof | POST | Verify asset ownership |
+| getAssetProofBatch | POST | Verify multiple asset ownerships |
+| getAssetsByAuthority | POST | Get assets by authority address |
+| getAssetsByCreator | POST | Get assets by creator address |
+| getAssetsByGroup | POST | Get assets by group |
+| getAssetsByOwner | POST | Get assets owned by an address |
+| getNftEditions | POST | Get NFT edition information |
+| getTokenAccounts | POST | Get token accounts |
+| searchAssets | POST | Query assets by various criteria |
+
+</Expandable>
+
+### Transactions
+
+<Expandable title="Enhanced Transactions">
+
+| API Name | Type | Path | Description |
+|----------|------|------|-------------|
+| Get Transactions | POST | - | Automatically parse and decode transaction data |
+| Get Transactions By Address | GET | `/v0/addresses/{address}/transactions` | Retrieve transaction history for addresses |
+
+</Expandable>
+
+<Expandable title="Priority Fee">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| getPriorityFeeEstimate | POST | Get priority fee estimate for transactions |
+
+</Expandable>
+
+### ZK Compression
+
+<Expandable title="ZK Compression APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| getSignaturesForAsset | POST | Get signatures for compressed asset |
+| getCompressedAccount | POST | Get compressed account information |
+| getCompressedAccountProof | POST | Get proof for compressed account |
+| getCompressedAccountsByOwner | POST | Get compressed accounts by owner |
+| getCompressedBalance | POST | Get compressed balance |
+| getCompressedBalanceByOwner | POST | Get compressed balance by owner |
+| getCompressedMintTokenHolders | POST | Get token holders for compressed mint |
+| getCompressedTokenAccountBalance | POST | Get compressed token account balance |
+| getCompressedTokenAccountsByDelegate | POST | Get compressed token accounts by delegate |
+| getCompressedTokenAccountsByOwner | POST | Get compressed token accounts by owner |
+| getCompressedTokenBalancesByOwner | POST | Get compressed token balances by owner |
+| getCompressedTokenBalancesByOwnerV2 | POST | Get compressed token balances by owner (v2) |
+| getCompressionSignaturesForAccount | POST | Get compression signatures for account |
+| getCompressionSignaturesForAddress | POST | Get compression signatures for address |
+| getCompressionSignaturesForOwner | POST | Get compression signatures for owner |
+| getCompressionSignaturesForTokenOwner | POST | Get compression signatures for token owner |
+| getIndexerHealth | POST | Get indexer health status |
+| getIndexerSlot | POST | Get indexer slot information |
+| getLatestCompressionSignatures | POST | Get latest compression signatures |
+| getLatestNonVotingSignatures | POST | Get latest non-voting signatures |
+| getMultipleCompressedAccountProofs | POST | Get multiple compressed account proofs |
+| getMultipleCompressedAccounts | POST | Get multiple compressed accounts |
+| getMultipleNewAddressProofs | POST | Get multiple new address proofs |
+| getMultipleNewAddressProofsV2 | POST | Get multiple new address proofs (v2) |
+| getTransactionWithCompressionInfo | POST | Get transaction with compression information |
+| getValidityProof | POST | Get validity proof for compressed data |
+
+</Expandable>
+
+### Streaming
+
+<Expandable title="LaserStream gRPC">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Subscribe | gRPC | Subscribe to real-time data streams |
+| GetBlockHeight | gRPC | Get current block height |
+| GetLatestBlockhash | gRPC | Get latest blockhash |
+| GetSlot | gRPC | Get current slot |
+| GetVersion | gRPC | Get version information |
+| IsBlockhashValid | gRPC | Check if blockhash is valid |
+| Ping | gRPC | Ping the streaming service |
+
+</Expandable>
+
+### Webhooks
+
+<Expandable title="Event Listening APIs">
+
+| API Name | Type | Path | Description |
+|----------|------|------|-------------|
+| Create Webhook | POST | `/v0/webhooks` | Create a new webhook |
+| Get Webhook | GET | `/v0/webhooks/{id}` | Get webhook details |
+| Get All Webhooks | GET | `/v0/webhooks` | Get all webhooks |
+| Update Webhook | PUT | `/v0/webhooks/{id}` | Update webhook configuration |
+| Delete Webhook | DELETE | `/v0/webhooks/{id}` | Delete a webhook |
+
+</Expandable>
+
+### RPC Methods
+
+<Expandable title="Solana RPC APIs">
+
+Helius supports all standard Solana RPC methods via HTTP POST and WebSocket subscriptions.
+
+#### HTTP Methods
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| getAccountInfo | POST | Get account information |
+| getBalance | POST | Get account balance |
+| getBlock | POST | Get block information |
+| getBlockCommitment | POST | Get block commitment |
+| getBlockHeight | POST | Get current block height |
+| getBlockProduction | POST | Get block production information |
+| getBlocks | POST | Get multiple blocks |
+| getBlocksWithLimit | POST | Get blocks with limit |
+| getBlockTime | POST | Get block time |
+| getClusterNodes | POST | Get cluster nodes |
+| getEpochInfo | POST | Get epoch information |
+| getEpochSchedule | POST | Get epoch schedule |
+| getFeeForMessage | POST | Get fee for message |
+| getFirstAvailableBlock | POST | Get first available block |
+| getGenesisHash | POST | Get genesis hash |
+| getHealth | POST | Get health status |
+| getHighestSnapshotSlot | POST | Get highest snapshot slot |
+| getIdentity | POST | Get identity |
+| getInflationGovernor | POST | Get inflation governor |
+| getInflationRate | POST | Get inflation rate |
+| getInflationReward | POST | Get inflation reward |
+| getLargestAccounts | POST | Get largest accounts |
+| getLatestBlockhash | POST | Get latest blockhash |
+| getLeaderSchedule | POST | Get leader schedule |
+| getMaxRetransmitSlot | POST | Get max retransmit slot |
+| getMaxShredInsertSlot | POST | Get max shred insert slot |
+| getMinimumBalanceForRentExemption | POST | Get minimum balance for rent exemption |
+| getMultipleAccounts | POST | Get multiple accounts |
+| getProgramAccounts | POST | Get program accounts |
+| getProgramAccountsV2 | POST | Get program accounts (v2) |
+| getRecentPerformanceSamples | POST | Get recent performance samples |
+| getRecentPrioritizationFees | POST | Get recent prioritization fees |
+| getSignaturesForAddress | POST | Get signatures for address |
+| getTransactionsForAddress | POST | Get transactions for address |
+| getSignatureStatuses | POST | Get signature statuses |
+| getSlot | POST | Get current slot |
+| getSlotLeader | POST | Get slot leader |
+| getSlotLeaders | POST | Get slot leaders |
+| getStakeMinimumDelegation | POST | Get stake minimum delegation |
+| getSupply | POST | Get supply information |
+| getTokenAccountBalance | POST | Get token account balance |
+| getTokenAccountsByDelegate | POST | Get token accounts by delegate |
+| getTokenAccountsByOwner | POST | Get token accounts by owner |
+| getTokenAccountsByOwnerV2 | POST | Get token accounts by owner (v2) |
+| getTokenLargestAccounts | POST | Get token largest accounts |
+| getTokenSupply | POST | Get token supply |
+| getTransaction | POST | Get transaction information |
+| getTransactionCount | POST | Get transaction count |
+| getVersion | POST | Get version information |
+| getVoteAccounts | POST | Get vote accounts |
+| isBlockhashValid | POST | Check if blockhash is valid |
+| minimumLedgerSlot | POST | Get minimum ledger slot |
+| requestAirdrop | POST | Request airdrop |
+| sendTransaction | POST | Send transaction |
+| simulateBundle | POST | Simulate transaction bundle |
+| simulateTransaction | POST | Simulate transaction |
+
+#### WebSocket Methods
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| accountSubscribe | WebSocket | Subscribe to account changes |
+| accountUnsubscribe | WebSocket | Unsubscribe from account changes |
+| blockSubscribe | WebSocket | Subscribe to block updates |
+| blockUnsubscribe | WebSocket | Unsubscribe from block updates |
+| logsSubscribe | WebSocket | Subscribe to program logs |
+| logsUnsubscribe | WebSocket | Unsubscribe from program logs |
+| programSubscribe | WebSocket | Subscribe to program updates |
+| programUnsubscribe | WebSocket | Unsubscribe from program updates |
+| rootSubscribe | WebSocket | Subscribe to root updates |
+| rootUnsubscribe | WebSocket | Unsubscribe from root updates |
+| signatureSubscribe | WebSocket | Subscribe to signature status |
+| signatureUnsubscribe | WebSocket | Unsubscribe from signature status |
+| slotSubscribe | WebSocket | Subscribe to slot updates |
+| slotsUpdatesSubscribe | WebSocket | Subscribe to slots updates |
+| slotsUpdatesUnsubscribe | WebSocket | Unsubscribe from slots updates |
+| slotUnsubscribe | WebSocket | Unsubscribe from slot updates |
+| voteSubscribe | WebSocket | Subscribe to vote updates |
+| voteUnsubscribe | WebSocket | Unsubscribe from vote updates |
+
+</Expandable>
+
+## Services
+
+### Dedicated Nodes
+
+Helius offers dedicated node infrastructure for enterprise applications:
+
+**Features:**
+- Single-tenant node infrastructure
+- Custom configuration options
+- High availability and reliability
+- Priority support
+- Custom RPC endpoints
+
+**Specifications:**
+- Standard tier: Single dedicated node
+- Premium tier: High-performance nodes with enhanced specs
+- Enterprise tier: Custom configurations and multi-node setups
+
+
+## SDKs & Clients
+
+### JavaScript/TypeScript
+
+**Package**: `@helius-labs/helius-sdk` or use `@solana/web3.js` with Helius RPC endpoint
+
+**Installation**:
+```bash
+npm install @solana/web3.js
+```
+
+**Usage**:
+```javascript
+import { Connection } from '@solana/web3.js';
+
+const connection = new Connection('https://rpc.helius.dev/?api-key=YOUR_API_KEY');
+// Use standard Solana RPC methods
+```
+
+For enhanced APIs, use direct HTTP requests or community SDKs.
+
+### Python
+
+**Package**: `solana-py` with Helius RPC endpoint
+
+**Installation**:
+```bash
+pip install solana
+```
+
+**Usage**:
+```python
+from solana.rpc.api import Client
+
+client = Client('https://rpc.helius.dev/?api-key=YOUR_API_KEY')
+# Use standard Solana RPC methods
+```
+
+### REST API
+
+Direct REST API access for enhanced APIs:
+- Base URL: `https://api.helius.dev`
+- Authentication: API key in query parameter or headers
+- Documentation: Available in API docs
+
+### WebSocket Client
+
+For Laser Stream WebSocket connections:
+- WebSocket URL: `wss://atlas-mainnet.helius-rpc.com`
+- Authentication: API key in connection parameters
+- Supports standard WebSocket libraries in any language
+
+## Getting Started
+
+1. **Sign up** at [helius.dev](https://helius.dev)
+2. **Get your API key** from the dashboard
+3. **Choose your tier** based on your needs
+4. **Start building** with Helius APIs
+
+<CardGroup cols={2}>
+  <Card
+    title="Documentation"
+    icon="book"
+    href="https://docs.helius.dev"
+  >
+    Official Helius documentation
+  </Card>
+  <Card
+    title="Dashboard"
+    icon="chart-line"
+    href="https://dashboard.helius.dev"
+  >
+    Manage your Helius account
+  </Card>
+</CardGroup>
+

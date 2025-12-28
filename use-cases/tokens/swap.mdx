@@ -1,0 +1,31 @@
+---
+title: "Token swap"
+description: "Find APIs for swapping tokens and executing trades."
+icon: "right-left"
+---
+
+## Swap APIs
+
+### Jupiter
+
+#### Swap Quote API
+- **Get Quote**: `GET /quote` - Get the best quote for a token swap
+  - Parameters: Input token, output token, amount, slippage
+  - Returns: Best route, price impact, estimated output
+
+
+#### Swap API
+- **Execute Swap**: `POST /swap` - Execute a swap transaction
+  - Parameters: Quote response, user wallet
+  - Returns: Transaction signature
+
+
+#### Price API
+- **Get Price**: `GET /price` - Get current token prices
+  - Parameters: Token addresses
+  - Returns: Current prices in USD and other tokens
+
+
+#### Route API
+- **Get Routes**: `GET /routes` - Find all possible routes for a swap
+- **Get Route Quote**: `GET /route-quote` - Get detailed quote for a specific route

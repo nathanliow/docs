@@ -1,0 +1,370 @@
+---
+title: "Turnkey"
+description: ""
+icon: "key"
+---
+
+<img src="/images/turnkey-logo.svg" alt="Turnkey Logo" style={{ height: '60px', marginBottom: '1rem', display: 'block' }}/>
+
+Turnkey is a wallet infrastructure platform that provides secure key management, wallet operations, and transaction signing across multiple blockchains. Turnkey offers comprehensive SDKs for various platforms and a robust REST API for wallet and key management.
+
+## Overview
+
+Turnkey provides developers with enterprise-grade wallet infrastructure:
+
+- **Secure Key Management**: Hardware-backed private key storage and management
+- **Multi-Chain Support**: Support for multiple blockchain networks
+- **Wallet Operations**: Create, import, export, and manage wallets
+- **Transaction Signing**: Sign transactions and raw payloads
+- **Policy Management**: Create and manage policies for access control
+- **User Management**: Create and manage users with authentication
+- **OAuth Integration**: OAuth 2.0 authentication support
+- **Smart Contract Interfaces**: Create and manage smart contract interfaces
+
+## SDKs & Clients
+
+### Client-side SDKs
+
+#### React
+
+**Package**: `@turnkey/react`
+
+**Installation**:
+```bash
+npm install @turnkey/react
+```
+
+#### React Native
+
+**Package**: `@turnkey/react-native`
+
+**Installation**:
+```bash
+npm install @turnkey/react-native
+```
+
+#### Flutter
+
+**Package**: `turnkey_flutter`
+
+**Installation**:
+```bash
+flutter pub add turnkey_flutter
+```
+
+#### Swift
+
+**Package**: Turnkey iOS SDK
+
+**Installation**: Available via Swift Package Manager
+
+#### Kotlin
+
+**Package**: Turnkey Android SDK
+
+**Installation**: Available via Maven/Gradle
+
+#### TypeScript (Frontend)
+
+**Package**: `@turnkey/frontend`
+
+**Installation**:
+```bash
+npm install @turnkey/frontend
+```
+
+### Server-side SDKs
+
+#### TypeScript (Server)
+
+**Package**: `@turnkey/server`
+
+**Installation**:
+```bash
+npm install @turnkey/server
+```
+
+#### Golang
+
+**Package**: `github.com/tkhq/go-sdk`
+
+**Installation**:
+```bash
+go get github.com/tkhq/go-sdk
+```
+
+#### Rust
+
+**Package**: `turnkey-rs`
+
+**Installation**:
+```bash
+cargo add turnkey-rs
+```
+
+#### Ruby
+
+**Package**: `turnkey-ruby`
+
+**Installation**:
+```bash
+gem install turnkey-ruby
+```
+
+#### Python
+
+**Package**: `turnkey-python`
+
+**Installation**:
+```bash
+pip install turnkey-python
+```
+
+### CLI
+
+**Package**: Turnkey CLI
+
+**Installation**: Available via npm or direct download
+
+## APIs
+
+### Activities
+
+<Expandable title="Activity APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Approve Activity | POST | Approve a pending activity |
+| Reject Activity | POST | Reject a pending activity |
+| Get Activity | GET | Retrieve activity details by ID |
+| List Activities | GET | List all activities |
+
+</Expandable>
+
+<Expandable title="Authentication APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create Authenticators | POST | Create new authenticators |
+| Delete Authenticators | POST | Delete authenticators |
+| Get Authenticator | GET | Retrieve authenticator details |
+| Get Authenticators | GET | List all authenticators |
+| Init OTP Auth | POST | Initialize OTP authentication |
+| OTP Auth | POST | Perform OTP authentication |
+| Login with OTP | POST | Login using OTP |
+| Login with Oauth | POST | Login using OAuth |
+| Login with a Stamp | POST | Login using a stamp |
+| OAuth 2.0 Authentication | POST | Authenticate with OAuth 2.0 |
+| Perform Email Auth | POST | Perform email authentication |
+| Init Email Recovery | POST | Initialize email recovery |
+| Recover a User | POST | Recover a user account |
+| Verify Generic OTP | POST | Verify a generic OTP code |
+| Init Generic OTP | POST | Initialize generic OTP |
+
+</Expandable>
+
+<Expandable title="API Key APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create API Keys | POST | Create new API keys |
+| Delete API Keys | POST | Delete API keys |
+| Get API Key | GET | Retrieve API key details |
+| Get API Keys | GET | List all API keys |
+
+</Expandable>
+
+<Expandable title="OAuth APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create Oauth Providers | POST | Create OAuth providers |
+| Delete Oauth Providers | POST | Delete OAuth providers |
+| Get Oauth Providers | GET | List OAuth providers |
+| Create OAuth 2.0 Credential | POST | Create OAuth 2.0 credential |
+| Update OAuth 2.0 Credential | PATCH | Update OAuth 2.0 credential |
+| Delete OAuth 2.0 Credential | DELETE | Delete OAuth 2.0 credential |
+| Get OAuth 2.0 Credential | GET | Get OAuth 2.0 credential |
+| List OAuth 2.0 Credentials | GET | List all OAuth 2.0 credentials |
+
+</Expandable>
+
+<Expandable title="Policy APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create Policy | POST | Create a new policy |
+| Delete Policy | DELETE | Delete a policy |
+| Update Policy | PATCH | Update policy settings |
+| Get Policy | GET | Retrieve policy details |
+| List Policies | GET | List all policies |
+| Get Policy Evaluations | GET | Get policy evaluation results |
+
+</Expandable>
+
+<Expandable title="Private Key APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create Private Keys | POST | Create new private keys |
+| Delete Private Keys | POST | Delete private keys |
+| Get Private Key | GET | Retrieve private key details |
+| List Private Keys | GET | List all private keys |
+| Export Private Key | POST | Export a private key |
+| Import Private Key | POST | Import an existing private key |
+| Init Import Private Key | POST | Initialize private key import |
+| Create Private Key Tag | POST | Create a tag for private keys |
+| Delete Private Key Tags | POST | Delete private key tags |
+| Update Private Key Tag | PATCH | Update private key tag |
+| List Private Key Tags | GET | List all private key tags |
+
+</Expandable>
+
+<Expandable title="Wallet APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create Wallet | POST | Create a new wallet |
+| Delete Wallets | POST | Delete wallets |
+| Update Wallet | PATCH | Update wallet settings |
+| Get Wallet | GET | Retrieve wallet details |
+| List Wallets | GET | List all wallets |
+| Export Wallet | POST | Export a wallet |
+| Import Wallet | POST | Import an existing wallet |
+| Init Import Wallet | POST | Initialize wallet import |
+| Create Wallet Accounts | POST | Create accounts within a wallet |
+| Delete Wallet Accounts | POST | Delete wallet accounts |
+| Get Wallet Account | GET | Retrieve wallet account details |
+| List Wallets Accounts | GET | List all wallet accounts |
+| Export Wallet Account | POST | Export a wallet account |
+
+</Expandable>
+
+<Expandable title="Transaction APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Sign Transaction | POST | Sign a transaction |
+| Sign Raw Payload | POST | Sign a raw payload |
+| Sign Raw Payloads | POST | Sign multiple raw payloads |
+| Submit Transaction Intent | POST | Submit a transaction intent for broadcasting |
+| Submit Raw Transaction | POST | Submit a raw transaction for broadcasting |
+
+</Expandable>
+
+<Expandable title="User APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create Users | POST | Create new users |
+| Delete Users | POST | Delete users |
+| Update User | PATCH | Update user information |
+| Get User | GET | Retrieve user details |
+| List Users | GET | List all users |
+| Update User's Email | PATCH | Update user email address |
+| Update User's Name | PATCH | Update user name |
+| Update User's Phone Number | PATCH | Update user phone number |
+| Create User Tag | POST | Create a tag for users |
+| Delete User Tags | POST | Delete user tags |
+| Update User Tag | PATCH | Update user tag |
+| List User Tags | GET | List all user tags |
+
+</Expandable>
+
+<Expandable title="Organization APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create Sub-Organization | POST | Create a sub-organization |
+| Delete Sub-Organization | POST | Delete a sub-organization |
+| Get Sub-Organizations | GET | List sub-organizations |
+| Get Verified Sub-Organizations | GET | Get verified sub-organizations |
+| Update Root Quorum | PATCH | Update root quorum settings |
+| Set Organization Feature | POST | Enable organization feature |
+| Remove Organization Feature | POST | Disable organization feature |
+
+</Expandable>
+
+<Expandable title="Session APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create Read Only Session | POST | Create a read-only session |
+| Create Read Write Session | POST | Create a read-write session |
+
+</Expandable>
+
+<Expandable title="Smart Contract APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create Smart Contract Interface | POST | Create a smart contract interface |
+| Delete Smart Contract Interface | POST | Delete a smart contract interface |
+| Get Smart Contract Interface | GET | Retrieve smart contract interface details |
+| List Smart Contract Interfaces | GET | List all smart contract interfaces |
+
+</Expandable>
+
+<Expandable title="Fiat On Ramp APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create Fiat On Ramp Credential | POST | Create fiat on-ramp credential |
+| Update Fiat On Ramp Credential | PATCH | Update fiat on-ramp credential |
+| Delete Fiat On Ramp Credential | DELETE | Delete fiat on-ramp credential |
+| List Fiat On Ramp Credentials | GET | List all fiat on-ramp credentials |
+| Init Fiat On Ramp | POST | Initialize fiat on-ramp |
+| Get On Ramp Transaction Status | GET | Get on-ramp transaction status |
+
+</Expandable>
+
+<Expandable title="Invitation APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create Invitations | POST | Create new invitations |
+| Delete Invitation | POST | Delete an invitation |
+
+</Expandable>
+
+### Queries
+
+<Expandable title="Query APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Who am I? | GET | Get current authenticated user/organization |
+| Get Configs | GET | Get configuration settings |
+| Get Activity | GET | Retrieve activity details |
+| List Activities | GET | List all activities |
+| List App Proofs for an Activity | GET | List app proofs for an activity |
+| Get a Specific Boot Proof | GET | Get specific boot proof |
+| Get the Latest Boot Proof for an App | GET | Get latest boot proof for an app |
+
+</Expandable>
+
+## Getting Started
+
+1. **Visit** [turnkey.com](https://turnkey.com)
+2. **Read the docs** at [docs.turnkey.com](https://docs.turnkey.com)
+3. **Get API credentials** from the dashboard
+4. **Install the SDK** for your platform
+5. **Start building** secure wallet integrations
+
+<CardGroup cols={2}>
+  <Card
+    title="Documentation"
+    icon="book"
+    href="https://docs.turnkey.com"
+  >
+    Complete Turnkey documentation
+  </Card>
+  <Card
+    title="Dashboard"
+    icon="chart-line"
+    href="https://dashboard.turnkey.com"
+  >
+    Manage your Turnkey account
+  </Card>
+</CardGroup>
+

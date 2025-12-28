@@ -1,0 +1,152 @@
+---
+title: "PumpFun"
+description: ""
+icon: "rocket"
+---
+
+<img src="/images/pump-fun-logo.png" alt="PumpFun Logo" style={{ height: '60px', marginBottom: '1rem', display: 'block' }}/>
+
+PumpFun is a token launch platform on Solana that enables anyone to create and launch tokens with bonding curves. PumpFun provides SDKs for integrating token creation, trading, and AMM functionality into applications.
+
+## Overview
+
+PumpFun provides developers with tools for token launches and trading:
+
+- **Token Creation**: Create and launch tokens with bonding curves
+- **Bonding Curves**: Automated market making through bonding curve mechanics
+- **AMM Integration**: Seamless transition from bonding curve to AMM pools
+- **Trading**: Buy and sell tokens directly through the platform
+- **Real-time Data**: Access to token prices, volume, and market data
+
+## SDKs & Clients
+
+### Pump SDK
+
+The Pump SDK provides functionality for creating tokens, interacting with bonding curves, and managing token launches on PumpFun.
+
+**Package**: `@pumpfun/sdk`
+
+**Installation**:
+```bash
+npm install @pumpfun/sdk
+```
+
+**Usage**:
+```javascript
+import { PumpSDK } from '@pumpfun/sdk';
+
+const pump = new PumpSDK({
+  connection: connection,
+  wallet: wallet
+});
+
+// Create a new token
+const token = await pump.createToken({
+  name: 'My Token',
+  symbol: 'MTK',
+  description: 'My awesome token',
+  image: 'https://example.com/image.png',
+  bondingCurve: {
+    initialVirtualTokenReserves: 1000000,
+    initialVirtualSolReserves: 1
+  }
+});
+
+// Buy tokens
+const buyTx = await pump.buy({
+  tokenMint: token.mint,
+  solAmount: 0.1
+});
+
+// Sell tokens
+const sellTx = await pump.sell({
+  tokenMint: token.mint,
+  tokenAmount: 1000
+});
+```
+
+**Key Features**:
+- Create tokens with custom metadata
+- Buy and sell tokens through bonding curves
+- Get token information and status
+- Check bonding curve state
+- Monitor token launches
+
+### Pump AMM SDK
+
+The Pump AMM SDK provides functionality for interacting with AMM pools after tokens graduate from bonding curves to Raydium pools.
+
+**Package**: `@pumpfun/amm-sdk`
+
+**Installation**:
+```bash
+npm install @pumpfun/amm-sdk
+```
+
+**Usage**:
+```javascript
+import { PumpAMMSDK } from '@pumpfun/amm-sdk';
+
+const amm = new PumpAMMSDK({
+  connection: connection,
+  wallet: wallet
+});
+
+// Get AMM pool information
+const poolInfo = await amm.getPoolInfo({
+  tokenMint: tokenMint
+});
+
+// Swap tokens in AMM pool
+const swapTx = await amm.swap({
+  tokenMint: tokenMint,
+  amountIn: 1000,
+  amountOutMin: 500,
+  direction: 'buy' // or 'sell'
+});
+
+// Add liquidity to pool
+const addLiquidityTx = await amm.addLiquidity({
+  tokenMint: tokenMint,
+  tokenAmount: 10000,
+  solAmount: 1
+});
+
+// Remove liquidity from pool
+const removeLiquidityTx = await amm.removeLiquidity({
+  tokenMint: tokenMint,
+  lpAmount: 1000
+});
+```
+
+**Key Features**:
+- Interact with Raydium AMM pools
+- Swap tokens in graduated pools
+- Add and remove liquidity
+- Get pool state and reserves
+- Calculate swap amounts and prices
+
+## Getting Started
+
+1. **Visit** [pump.fun](https://pump.fun)
+2. **Read the docs** at [docs.pump.fun](https://docs.pump.fun)
+3. **Install the SDK** for your platform
+4. **Start building** token launch and trading features
+
+<CardGroup cols={2}>
+  <Card
+    title="Developer Documentation"
+    icon="book"
+    href="https://docs.pump.fun"
+  >
+    Complete PumpFun developer guide
+  </Card>
+  <Card
+    title="GitHub"
+    icon="code-branch"
+    href="https://github.com/pumpdotfun"
+  >
+    PumpFun SDK repositories
+  </Card>
+</CardGroup>
+

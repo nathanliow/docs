@@ -1,0 +1,70 @@
+---
+title: "Solana/kit"
+description: ""
+icon: "code"
+---
+
+<img src="/images/solana-logo.svg" alt="Solana Logo" style={{ height: '60px', marginBottom: '1rem', display: 'block' }}/>
+
+Solana/kit is a comprehensive TypeScript SDK for building Solana applications. It provides a unified interface for interacting with Solana programs, wallets, and the blockchain.
+
+## Overview
+
+Solana/kit provides developers with a modern TypeScript SDK for Solana development:
+
+- **Type-Safe**: Full TypeScript support with type safety
+- **Unified API**: Consistent interface for Solana operations
+- **Wallet Integration**: Easy wallet connection and transaction signing
+- **Program Interaction**: Simplified program interaction and instruction building
+- **Transaction Building**: High-level transaction construction utilities
+
+## SDKs & Clients
+
+### TypeScript/JavaScript
+
+**Package**: `@solana/kit`
+
+**Installation**:
+```bash
+npm install @solana/kit
+```
+
+**Usage**:
+```typescript
+import { SolanaKit } from '@solana/kit';
+
+const kit = new SolanaKit({
+  connection: connection,
+  wallet: wallet
+});
+
+// Build and send transactions
+const tx = await kit.buildTransaction({
+  instructions: [...]
+});
+```
+
+## Getting Started
+
+1. **Visit** [solana-kit.com](https://solana-kit.com)
+2. **Read the docs** at [docs.solana-kit.com](https://docs.solana-kit.com)
+3. **Install the SDK** for your project
+4. **Start building** Solana applications
+
+<CardGroup cols={2}>
+  <Card
+    title="Documentation"
+    icon="book"
+    href="https://docs.solana-kit.com"
+  >
+    Complete Solana/kit documentation
+  </Card>
+  <Card
+    title="GitHub"
+    icon="code-branch"
+    href="https://github.com/solana-kit"
+  >
+    Solana/kit repositories
+  </Card>
+</CardGroup>
+

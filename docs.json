@@ -1,104 +1,93 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Build on Solana",
+  "theme": "linden",
+  "name": "builtitonsolana",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#9333EA",
+    "light": "#A855F7",
+    "dark": "#000000"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Overview",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Overview",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "pricing-comparison"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Use Cases",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              {
+                "group": "Tokens",
+                "pages": [
+                  "use-cases/tokens/metadata",
+                  "use-cases/tokens/swap",
+                  "use-cases/tokens/balance"
+                ]
+              },
+              {
+                "group": "Portfolio",
+                "pages": [
+                  "use-cases/portfolio/transaction-fetching",
+                  "use-cases/portfolio/parsing"
+                ]
+              },
+              "use-cases/candles",
+              "use-cases/prediction-markets",
+              "use-cases/stablecoins",
+              "use-cases/wallets",
+              {
+                "group": "Executing",
+                "pages": [
+                  "use-cases/executing/helius-sender",
+                  "use-cases/executing/jupiter-swaps",
+                  "use-cases/executing/privacy-cash-transfers"
+                ]
+              },
+              "use-cases/addresses"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Service Providers",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "protocols/helius",
+              "protocols/jupiter",
+              "protocols/birdeye",
+              "protocols/dflow",
+              "protocols/moralis",
+              "protocols/quicknode",
+              "protocols/sphere",
+              "protocols/triton"
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Frameworks / SDKs",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "protocols/anchor",
+              "protocols/solana-web3-js",
+              "protocols/solana-kit",
+              "protocols/solana-wallet-adapter",
+              "protocols/solana-pay",
+              "protocols/privy",
+              "protocols/turnkey",
+              "protocols/litesvm",
+              "protocols/phantom",
+              "protocols/pumpfun",
+              "protocols/privacy-cash"
             ]
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    ]
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
+    "links": []
   },
   "contextual": {
     "options": [
@@ -113,10 +102,6 @@
    ]
   },
   "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+    "socials": {}
   }
 }

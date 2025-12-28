@@ -1,0 +1,237 @@
+---
+title: "DFlow"
+description: ""
+icon: "exchange-alt"
+---
+
+<img src="/images/dflow-logo.png" alt="DFlow Logo" style={{ height: '60px', marginBottom: '1rem', display: 'block' }}/>
+
+DFlow is a comprehensive DeFi platform providing swap APIs and prediction market infrastructure on Solana. DFlow offers powerful tools for token swaps, order management, and prediction market data.
+
+## Overview
+
+DFlow provides developers with a unified platform for DeFi operations:
+
+- **Swap APIs**: Imperative and declarative swap functionality with quote generation
+- **Order Management**: Track and manage swap orders and their status
+- **Prediction Markets**: Complete prediction market infrastructure with events, markets, and trading
+- **Real-time Data**: WebSocket support for live prices, trades, and orderbook updates
+- **Token & Venue Data**: Access to token lists and available swap venues
+
+## APIs
+
+### Swap APIs
+
+#### Order API Endpoints
+
+<Expandable title="Order APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Order | GET | Retrieve order details |
+| Get Order Status | GET | Get current status of an order |
+
+</Expandable>
+
+#### Imperative Swap API Endpoints
+
+<Expandable title="Imperative Swap APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Quote | GET | Get swap quote for token pair |
+| Create Swap | POST | Create and execute a swap transaction |
+| Create Swap Instructions | POST | Generate swap instructions without executing |
+
+</Expandable>
+
+#### Declarative Swap API Endpoints
+
+<Expandable title="Declarative Swap APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Intent Quote | GET | Get quote for intent-based swap |
+| Submit Intent Swap | POST | Submit an intent-based swap order |
+
+</Expandable>
+
+#### Prediction Market Utility Endpoints
+
+<Expandable title="Prediction Market Utilities">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Initialize Prediction Market | GET | Initialize a new prediction market |
+
+</Expandable>
+
+#### Token API Endpoints
+
+<Expandable title="Token APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Token List | GET | Retrieve list of available tokens |
+| Get Token List with Decimals | GET | Get token list including decimal precision |
+
+</Expandable>
+
+#### Venues API Endpoints
+
+<Expandable title="Venues APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Venue List | GET | Get list of available swap venues |
+
+</Expandable>
+
+### Prediction Market APIs
+
+#### Events API Endpoints
+
+<Expandable title="Events APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Event | GET | Retrieve event details |
+| Get Events | GET | Get list of events |
+| Get Event Forecast Percentile History | GET | Get forecast percentile history for an event |
+| Get Event Forecast Percentile History by Mint | GET | Get forecast percentile history by token mint |
+| Get Event Candlesticks | GET | Get candlestick data for an event |
+
+</Expandable>
+
+#### Markets API Endpoints
+
+<Expandable title="Markets APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Market | GET | Retrieve market details |
+| Get Market by Mint | GET | Get market information by token mint |
+| Get Markets | GET | Get list of markets |
+| Get Markets Batch | POST | Get multiple markets in one request |
+| Get Outcome Mints | GET | Get outcome token mints for a market |
+| Filter Outcome Mints | POST | Filter outcome mints by criteria |
+| Get Market Candlesticks | GET | Get candlestick data for a market |
+| Get Market Candlesticks by Mint | GET | Get market candlesticks by token mint |
+
+</Expandable>
+
+#### Orderbook API Endpoints
+
+<Expandable title="Orderbook APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Orderbook | GET | Retrieve orderbook data |
+| Get Orderbook by Mint Address | GET | Get orderbook by token mint address |
+
+</Expandable>
+
+#### Trades API Endpoints
+
+<Expandable title="Trades APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Trades | GET | Retrieve trade history |
+| Get Trades by Mint | GET | Get trades filtered by token mint |
+
+</Expandable>
+
+#### Live Data API Endpoints
+
+<Expandable title="Live Data APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Live Data | GET | Get real-time market data |
+| Get Live Data by Event | GET | Get live data for a specific event |
+| Get Live Data by Mint | GET | Get live data by token mint |
+
+</Expandable>
+
+#### Series API Endpoints
+
+<Expandable title="Series APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Series | GET | Retrieve series information |
+| Get Series by Ticker | GET | Get series data by ticker symbol |
+
+</Expandable>
+
+#### Tags API Endpoints
+
+<Expandable title="Tags APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Tags by Categories | GET | Get tags organized by categories |
+
+</Expandable>
+
+#### Sports API Endpoints
+
+<Expandable title="Sports APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Filters by Sports | GET | Get filter options for sports markets |
+
+</Expandable>
+
+#### Search API Endpoints
+
+<Expandable title="Search APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Search Events | GET | Search for events by query |
+
+</Expandable>
+
+### Streaming
+
+#### WebSockets
+
+<Expandable title="WebSocket Channels">
+
+DFlow provides real-time data streaming via WebSocket connections:
+
+| Channel Name | Description |
+|--------------|-------------|
+| Prices Channel | Real-time price updates for markets and tokens |
+| Trades Channel | Stream trade events as they occur |
+| Orderbook Channel | Real-time orderbook updates |
+
+</Expandable>
+
+## Getting Started
+
+1. **Sign up** for a DFlow account
+2. **Get your API key** from the dashboard
+3. **Choose your plan** based on your needs
+4. **Start building** with DFlow APIs
+
+<CardGroup cols={2}>
+  <Card
+    title="API Documentation"
+    icon="code"
+    href="https://docs.dflow.com"
+  >
+    Complete DFlow API reference
+  </Card>
+  <Card
+    title="Dashboard"
+    icon="chart-line"
+    href="https://dashboard.dflow.com"
+  >
+    Manage your DFlow account
+  </Card>
+</CardGroup>
+

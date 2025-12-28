@@ -1,0 +1,30 @@
+---
+title: "Privacy Cash transfers"
+description: "Find APIs for executing privacy-preserving transfers using Privacy Cash."
+icon: "shield"
+---
+
+## Privacy Cash Transfer APIs
+
+### Privacy Cash
+
+#### SOL Operations
+- **deposit()**: Deposit SOL into privacy pools (shield)
+  - Parameters: `lamports` - Amount in lamports
+  - Returns: Deposit transaction result
+- **withdraw()**: Withdraw SOL from privacy pools to recipient address (unshield)
+  - Parameters: `lamports` - Amount in lamports, `recipientAddress` - Recipient address
+  - Returns: Withdraw transaction result
+- **getPrivateBalance()**: Get private SOL balance in privacy pools
+  - Returns: Balance object with `lamports` property
+
+#### USDC Operations
+- **depositUSDC()**: Deposit USDC into privacy pools (shield)
+  - Parameters: `base_units` - Amount in base units (1e6 for USDC)
+  - Returns: Deposit transaction result
+- **withdrawUSDC()**: Withdraw USDC from privacy pools to recipient address (unshield)
+  - Parameters: `base_units` - Amount in base units, `recipientAddress` - Recipient address
+  - Returns: Withdraw transaction result
+- **getPrivateBalanceUSDC()**: Get private USDC balance in privacy pools
+  - Returns: Balance object with `base_units` property
+

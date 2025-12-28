@@ -1,0 +1,111 @@
+---
+title: "Anchor"
+description: ""
+icon: "code"
+---
+
+<img src="/images/anchor-logo.png" alt="Anchor Logo" style={{ height: '60px', marginBottom: '1rem', display: 'block' }}/>
+
+Anchor is a framework for building Solana programs (smart contracts) using Rust. It provides a developer-friendly framework with code generation, testing utilities, and client libraries for TypeScript and Python.
+
+## Overview
+
+Anchor provides developers with a complete framework for Solana program development:
+
+- **Rust Framework**: Build Solana programs with Rust
+- **Code Generation**: Automatic IDL generation and client code
+- **Type Safety**: Type-safe program interactions
+- **Testing**: Built-in testing utilities and framework
+- **Client Libraries**: TypeScript and Python clients
+- **Developer Experience**: Simplified program development workflow
+
+## SDKs & Clients
+
+### Rust (Program Development)
+
+**Package**: `anchor-lang`, `anchor-spl`
+
+**Installation**:
+```bash
+cargo install --git https://github.com/coral-xyz/anchor avm --locked --force
+```
+
+**Usage**:
+```rust
+use anchor_lang::prelude::*;
+
+#[program]
+pub mod my_program {
+    use super::*;
+    pub fn initialize(ctx: Context<Initialize>) -> Result<()> {
+        Ok(())
+    }
+}
+```
+
+### TypeScript/JavaScript (Client)
+
+**Package**: `@coral-xyz/anchor`
+
+**Installation**:
+```bash
+npm install @coral-xyz/anchor
+```
+
+**Usage**:
+```typescript
+import { Program, AnchorProvider } from '@coral-xyz/anchor';
+import { Connection } from '@solana/web3.js';
+
+const provider = new AnchorProvider(connection, wallet, {});
+const program = new Program(idl, programId, provider);
+
+// Call program method
+await program.methods.initialize().rpc();
+```
+
+### Python (Client)
+
+**Package**: `anchorpy`
+
+**Installation**:
+```bash
+pip install anchorpy
+```
+
+**Usage**:
+```python
+from anchorpy import Program, Provider
+from solana.rpc.async_api import AsyncClient
+
+provider = Provider(AsyncClient("https://api.mainnet-beta.solana.com"), wallet)
+program = Program(idl, program_id, provider)
+
+# Call program method
+await program.rpc["initialize"]()
+```
+
+## Getting Started
+
+1. **Visit** [anchor-lang.com](https://anchor-lang.com)
+2. **Read the docs** at [www.anchor-lang.com/docs](https://www.anchor-lang.com/docs)
+3. **Install Anchor** CLI
+4. **Start building** Solana programs
+
+<CardGroup cols={2}>
+  <Card
+    title="Documentation"
+    icon="book"
+    href="https://www.anchor-lang.com/docs"
+  >
+    Complete Anchor documentation
+  </Card>
+  <Card
+    title="GitHub"
+    icon="code-branch"
+    href="https://github.com/coral-xyz/anchor"
+  >
+    Anchor repository
+  </Card>
+</CardGroup>
+

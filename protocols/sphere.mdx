@@ -1,0 +1,176 @@
+---
+title: "Sphere"
+description: ""
+icon: "globe"
+---
+
+<img src="/images/sphere-logo.jpeg" alt="Sphere Logo" style={{ height: '60px', marginBottom: '1rem', display: 'block' }}/>
+
+Sphere is a payments infrastructure platform that enables seamless transfers between fiat and virtual currencies. Sphere provides APIs for customer onboarding, KYC verification, bank accounts, wallets, transfers, and virtual accounts for on-ramps and off-ramps.
+
+## Overview
+
+Sphere provides developers with comprehensive payment infrastructure:
+
+- **Fiat to Crypto Transfers**: Move between fiat currencies and virtual currencies
+- **On-Ramps**: Virtual accounts for accepting payments
+- **Off-Ramps**: CCTP off-ramp for liquidating to fiat
+- **Customer Onboarding**: KYC verification and identity management
+- **Bank Accounts**: Manage bank account connections
+- **Wallets**: Create and manage wallets
+- **Webhooks**: Real-time event notifications
+
+## APIs
+
+### Identity
+
+#### Customer
+
+<Expandable title="Customer APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create Customer | POST | Create a new customer |
+| Get Customer by ID | GET | Retrieve customer details by ID |
+| Update Customer by ID | PATCH | Update customer information |
+
+</Expandable>
+
+#### Onboarding
+
+<Expandable title="Onboarding APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create KYC Link | POST | Create a KYC verification link |
+| Create TOS Link | POST | Create a Terms of Service link |
+| Send Verification Code | POST | Send verification code to customer |
+| Verify Verification Code | POST | Verify a verification code |
+| Face Verification Link | POST | Create face verification link |
+| Submit Verification | POST | Submit verification documents |
+
+</Expandable>
+
+#### Upload Document
+
+<Expandable title="Document Upload APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Upload Document | POST | Upload verification documents |
+
+</Expandable>
+
+### Payment Instruments
+
+#### Bank Account
+
+<Expandable title="Bank Account APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Bank Account by ID | GET | Retrieve bank account details by ID |
+| Create Bank Account | POST | Create a new bank account connection |
+
+</Expandable>
+
+#### Wallet
+
+<Expandable title="Wallet APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Wallet by ID | GET | Retrieve wallet details by ID |
+| Create Wallet | POST | Create a new wallet |
+
+</Expandable>
+
+### Transfer
+
+#### Virtual Account
+
+<Expandable title="Virtual Account APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create Virtual Account | POST | Create a virtual account for on-ramp |
+| Get Virtual Account | GET | Retrieve virtual account details by ID |
+| Update Virtual Account | PATCH | Update virtual account settings |
+| List Virtual Accounts | GET | Get list of all virtual accounts |
+| List Transfers of Virtual Account | GET | Get transfers for a specific virtual account |
+| Reactivate Virtual Account | PATCH | Reactivate a deactivated virtual account |
+| Deactivate Virtual Account | PATCH | Deactivate a virtual account |
+
+</Expandable>
+
+#### Transfer
+
+<Expandable title="Transfer APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create Transfer | POST | Create a new transfer between fiat and virtual currencies |
+| Get Transfer by ID | GET | Retrieve transfer details by ID |
+| List Transfers | GET | Get list of all transfers |
+| Create CCTP OffRamp | POST | Create a CCTP off-ramp transfer |
+
+</Expandable>
+
+#### Transfer Fee
+
+<Expandable title="Transfer Fee APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Transfer Fee by ID | GET | Retrieve transfer fee details by ID |
+| Create Transfer Fee | POST | Create a new transfer fee configuration |
+
+</Expandable>
+
+### Webhooks
+
+#### Webhook
+
+<Expandable title="Webhook APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Webhook by ID | GET | Retrieve webhook configuration by ID |
+| Create Webhook | POST | Create a new webhook |
+
+</Expandable>
+
+#### Event
+
+<Expandable title="Event APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Event by ID | GET | Retrieve event details by ID |
+
+</Expandable>
+
+## Getting Started
+
+1. **Visit** [docs.spherepay.co](https://docs.spherepay.co)
+2. **Sign up** for a Sphere account
+3. **Get your API key** from the dashboard
+4. **Start building** payment integrations
+
+<CardGroup cols={2}>
+  <Card
+    title="Documentation"
+    icon="book"
+    href="https://docs.spherepay.co"
+  >
+    Complete Sphere API reference
+  </Card>
+  <Card
+    title="Dashboard"
+    icon="chart-line"
+    href="https://dashboard.spherepay.co"
+  >
+    Manage your Sphere account
+  </Card>
+</CardGroup>
+

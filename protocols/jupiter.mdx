@@ -1,0 +1,331 @@
+---
+title: "Jupiter"
+description: ""
+icon: "exchange-alt"
+---
+
+
+<img src="/images/jupiter-logo.svg" alt="Jupiter Logo" style={{ height: '60px', marginBottom: '1rem', display: 'block' }}/>
+
+Jupiter is the leading DEX aggregator on Solana, providing the best swap rates by routing trades across multiple DEXs. They offer comprehensive APIs for integrating swaps, price quotes, and DeFi functionality into your applications.
+
+## Overview
+
+Jupiter aggregates liquidity from all major Solana DEXs to provide:
+- **Best swap rates**: Automatically finds the best prices across all DEXs
+- **Smart routing**: Splits trades across multiple DEXs for optimal execution
+- **Comprehensive API**: Easy integration for swaps, quotes, and more
+- **Real-time data**: Live price feeds and market data
+
+## APIs
+
+### Tokens
+
+<Expandable title="Tokens V2">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| search | GET | Search for tokens |
+| tag | GET | Get token tags |
+| category | GET | Get token categories |
+| recent | GET | Get recent tokens |
+| Get content for multiple mints | GET | Get content for multiple token mints |
+| Get content for trending (cooking) tokens | GET | Get content for trending tokens |
+| Get paginated content feed | GET | Get paginated content feed |
+
+</Expandable>
+
+<Expandable title="Price v3">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| price | GET | Get current token prices |
+
+</Expandable>
+
+### Transactions
+
+<Expandable title="Ultra Swap">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| order | GET | Get order information |
+| execute | POST | Execute ultra swap |
+| holdings | GET | Get holdings |
+| shield | GET | Get shield information |
+| search | GET | Search for swaps |
+| routers | GET | Get available routers |
+
+</Expandable>
+
+<Expandable title="Metis Swap">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| quote | GET | Get swap quote |
+| swap | POST | Execute swap |
+| swap-instructions | POST | Get swap instructions |
+| program-id-to-label | GET | Get program ID to label mapping |
+
+</Expandable>
+
+<Expandable title="Lend">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| deposit | POST | Deposit tokens |
+| withdraw | POST | Withdraw tokens |
+| mint | POST | Mint tokens |
+| redeem | POST | Redeem tokens |
+| deposit-instructions | POST | Get deposit instructions |
+| withdraw-instructions | POST | Get withdraw instructions |
+| mint-instructions | POST | Get mint instructions |
+| redeem-instructions | POST | Get redeem instructions |
+| tokens | GET | Get lend tokens |
+| positions | GET | Get lending positions |
+| earnings | GET | Get earnings information |
+
+</Expandable>
+
+<Expandable title="Trigger">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| createOrder | POST | Create trigger order |
+| execute | POST | Execute trigger order |
+| cancelOrder | POST | Cancel trigger order |
+| cancelOrders | POST | Cancel multiple trigger orders |
+| getTriggerOrders | GET | Get trigger orders |
+
+</Expandable>
+
+<Expandable title="Recurring">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| createOrder | POST | Create recurring order |
+| execute | POST | Execute recurring order |
+| cancelOrder | POST | Cancel recurring order |
+| getRecurringOrders | GET | Get recurring orders |
+
+</Expandable>
+
+<Expandable title="Send">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| craft-send | POST | Craft send transaction |
+| craft-clawback | POST | Craft clawback transaction |
+| pending-invites | GET | Get pending invites |
+| invite-history | GET | Get invite history |
+
+</Expandable>
+
+<Expandable title="Studio">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| dbc-pool-create-tx | POST | Create DBC pool transaction |
+| dbc-pool-submit | POST | Submit DBC pool |
+| dbc-pool-addresses-by-mint | GET | Get DBC pool addresses by mint |
+| dbc-fee | POST | Get DBC fee |
+| dbc-fee-create-tx | POST | Create DBC fee transaction |
+
+</Expandable>
+
+### Webhooks
+
+Webhook services for swap notifications:
+
+#### Swap Webhooks
+- **Transaction Status**: Receive notifications when swaps complete
+- **Order Updates**: Get notified of limit order status changes
+- **DCA Execution**: Receive notifications for DCA plan executions
+
+### Streaming
+
+Real-time data streaming:
+
+#### Price Streams
+- **Token Price Streams**: Real-time price updates for tokens
+- **Market Data Streams**: Stream market data and analytics
+
+### Portfolio
+
+<Expandable title="Portfolio APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get positions | GET | Get portfolio positions |
+| Get staked jup | GET | Get staked JUP tokens |
+| Get platforms | GET | Get platform information |
+
+</Expandable>
+
+## Services
+
+### Jupiter Swap Widget
+
+Embeddable swap widget for your application:
+
+**Features:**
+- Pre-built UI component
+- Customizable styling
+- Mobile responsive
+- Supports all Jupiter features
+
+**Integration:**
+- React component
+- Vanilla JavaScript
+- Iframe embed
+
+### Jupiter Terminal
+
+Full-featured swap interface:
+
+- Complete swap UI
+- Token search and selection
+- Price charts
+- Transaction history
+- Wallet integration
+
+### Jupiter API Pro
+
+Enhanced API access with priority features:
+
+**Features:**
+- Higher rate limits
+- Priority routing
+- Advanced analytics
+- Dedicated support
+- Custom endpoints
+
+**Use Cases:**
+- High-volume applications
+- Trading platforms
+- DeFi protocols
+- Enterprise integrations
+
+### Jupiter Analytics
+
+Market data and analytics:
+
+- Token price history
+- Volume analytics
+- Liquidity metrics
+- Route performance
+- Market trends
+
+## SDKs & Clients
+
+### JavaScript/TypeScript
+
+**Package**: `@jup-ag/api` or `@jup-ag/core`
+
+**Installation**:
+```bash
+npm install @jup-ag/api
+```
+
+**Usage**:
+```javascript
+import { QuoteResponse, SwapResponse } from '@jup-ag/api';
+
+// Get quote
+const quote = await fetch(
+  `https://quote-api.jup.ag/v6/quote?inputMint=${inputMint}&outputMint=${outputMint}&amount=${amount}`
+).then(res => res.json());
+
+// Execute swap
+const swap = await fetch('https://quote-api.jup.ag/v6/swap', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ quoteResponse: quote, userPublicKey: publicKey })
+}).then(res => res.json());
+```
+
+### Python
+
+**Package**: `jupiter-python-sdk` or direct REST API calls
+
+**Installation**:
+```bash
+pip install requests
+```
+
+**Usage**:
+```python
+import requests
+
+# Get quote
+quote = requests.get(
+    'https://quote-api.jup.ag/v6/quote',
+    params={
+        'inputMint': input_mint,
+        'outputMint': output_mint,
+        'amount': amount
+    }
+).json()
+
+# Execute swap
+swap = requests.post(
+    'https://quote-api.jup.ag/v6/swap',
+    json={'quoteResponse': quote, 'userPublicKey': public_key}
+).json()
+```
+
+### React Component
+
+**Package**: `@jup-ag/react-hook` or `@jup-ag/react-ui`
+
+**Installation**:
+```bash
+npm install @jup-ag/react-hook
+```
+
+**Usage**:
+```jsx
+import { useJupiter } from '@jup-ag/react-hook';
+
+function SwapComponent() {
+  const { quote, loading, error } = useJupiter({
+    amount: 1000000,
+    inputMint: 'So11111111111111111111111111111111111111112',
+    outputMint: 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v'
+  });
+  
+  // Use quote data
+}
+```
+
+### REST API
+
+Direct REST API access:
+- Base URL: `https://quote-api.jup.ag/v6`
+- No authentication required for public endpoints
+- Documentation: Available in API docs
+
+## Getting Started
+
+1. **Visit** [jup.ag](https://jup.ag)
+2. **Read the docs** at [docs.jup.ag](https://docs.jup.ag)
+3. **Get API access** (free tier available)
+4. **Start integrating** swaps into your app
+
+<CardGroup cols={2}>
+  <Card
+    title="API Documentation"
+    icon="code"
+    href="https://docs.jup.ag"
+  >
+    Complete Jupiter API reference
+  </Card>
+  <Card
+    title="Swap Widget"
+    icon="puzzle-piece"
+    href="https://docs.jup.ag/docs/apis/swap-api"
+  >
+    Integrate Jupiter swaps
+  </Card>
+</CardGroup>
+

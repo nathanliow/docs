@@ -1,0 +1,142 @@
+---
+title: "Prediction Markets"
+description: "Find the right APIs for building prediction market applications, including event data, market information, orderbooks, trades, and real-time streaming."
+icon: "chart-line"
+---
+
+## Event Metadata
+
+APIs for retrieving event and market metadata, including event details, market information, series, tags, and search functionality.
+
+### DFlow
+
+#### Events API Endpoints
+
+<Expandable title="Events APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Event | GET | Retrieve event details |
+| Get Events | GET | Get list of events |
+| Get Event Forecast Percentile History | GET | Get forecast percentile history for an event |
+| Get Event Forecast Percentile History by Mint | GET | Get forecast percentile history by token mint |
+| Get Event Candlesticks | GET | Get candlestick data for an event |
+
+</Expandable>
+
+#### Markets API Endpoints
+
+<Expandable title="Markets APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Market | GET | Retrieve market details |
+| Get Market by Mint | GET | Get market information by token mint |
+| Get Markets | GET | Get list of markets |
+| Get Markets Batch | POST | Get multiple markets in one request |
+| Get Outcome Mints | GET | Get outcome token mints for a market |
+| Filter Outcome Mints | POST | Filter outcome mints by criteria |
+| Get Market Candlesticks | GET | Get candlestick data for a market |
+| Get Market Candlesticks by Mint | GET | Get market candlesticks by token mint |
+
+</Expandable>
+
+#### Series API Endpoints
+
+<Expandable title="Series APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Series | GET | Retrieve series information |
+| Get Series by Ticker | GET | Get series data by ticker symbol |
+
+</Expandable>
+
+#### Tags API Endpoints
+
+<Expandable title="Tags APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Tags by Categories | GET | Get tags organized by categories |
+
+</Expandable>
+
+#### Sports API Endpoints
+
+<Expandable title="Sports APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Filters by Sports | GET | Get filter options for sports markets |
+
+</Expandable>
+
+#### Search API Endpoints
+
+<Expandable title="Search APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Search Events | GET | Search for events by query |
+
+</Expandable>
+
+## Trade
+
+APIs for trading operations including orderbooks, trade history, and live market data.
+
+### DFlow
+
+#### Orderbook API Endpoints
+
+<Expandable title="Orderbook APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Orderbook | GET | Retrieve orderbook data |
+| Get Orderbook by Mint Address | GET | Get orderbook by token mint address |
+
+</Expandable>
+
+#### Trades API Endpoints
+
+<Expandable title="Trades APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Trades | GET | Retrieve trade history |
+| Get Trades by Mint | GET | Get trades filtered by token mint |
+
+</Expandable>
+
+#### Live Data API Endpoints
+
+<Expandable title="Live Data APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Live Data | GET | Get real-time market data |
+| Get Live Data by Event | GET | Get live data for a specific event |
+| Get Live Data by Mint | GET | Get live data by token mint |
+
+</Expandable>
+
+## Streaming
+
+Real-time data streaming via WebSocket connections for live updates on prices, trades, and orderbooks.
+
+### DFlow WebSockets
+
+<Expandable title="WebSocket Channels">
+
+DFlow provides real-time data streaming via WebSocket connections for prediction markets:
+
+| Channel Name | Description |
+|--------------|-------------|
+| Prices Channel | Real-time price updates for markets and tokens |
+| Trades Channel | Stream trade events as they occur |
+| Orderbook Channel | Real-time orderbook updates |
+
+</Expandable>
+

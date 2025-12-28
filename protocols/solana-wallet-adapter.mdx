@@ -1,0 +1,108 @@
+---
+title: "Solana Wallet Adapter"
+description: ""
+icon: "wallet"
+---
+
+<img src="/images/solana-logo.svg" alt="Solana Logo" style={{ height: '60px', marginBottom: '1rem', display: 'block' }}/>
+
+Solana Wallet Adapter is a standard interface library for connecting wallets in Solana applications. It provides a unified API for wallet connections, making it easy to support multiple wallets in your application.
+
+## Overview
+
+Solana Wallet Adapter provides developers with a standardized wallet connection interface:
+
+- **Multi-Wallet Support**: Connect to Phantom, Solflare, Glow, and other Solana wallets
+- **Unified API**: Single interface for all wallet operations
+- **React Integration**: React hooks and components for easy integration
+- **Type Safety**: Full TypeScript support
+- **Transaction Signing**: Sign and send transactions through connected wallets
+- **Event Handling**: Listen to wallet connection and disconnection events
+
+## SDKs & Clients
+
+### React
+
+**Package**: `@solana/wallet-adapter-react`
+
+**Installation**:
+```bash
+npm install @solana/wallet-adapter-react @solana/wallet-adapter-react-ui @solana/wallet-adapter-wallets
+```
+
+**Usage**:
+```jsx
+import { WalletProvider, useWallet } from '@solana/wallet-adapter-react';
+import { WalletModalProvider, WalletMultiButton } from '@solana/wallet-adapter-react-ui';
+import { PhantomWalletAdapter, SolflareWalletAdapter } from '@solana/wallet-adapter-wallets';
+
+const wallets = [
+  new PhantomWalletAdapter(),
+  new SolflareWalletAdapter(),
+];
+
+function App() {
+  return (
+    <WalletProvider wallets={wallets} autoConnect>
+      <WalletModalProvider>
+        <WalletMultiButton />
+        <YourApp />
+      </WalletModalProvider>
+    </WalletProvider>
+  );
+}
+```
+
+### Base Library
+
+**Package**: `@solana/wallet-adapter-base`
+
+**Installation**:
+```bash
+npm install @solana/wallet-adapter-base
+```
+
+**Usage**:
+```typescript
+import { WalletAdapter } from '@solana/wallet-adapter-base';
+
+// Use wallet adapters to connect and interact with wallets
+const adapter = new PhantomWalletAdapter();
+await adapter.connect();
+const publicKey = adapter.publicKey;
+```
+
+### Wallet Adapters
+
+Individual wallet adapters are available for specific wallets:
+
+- `@solana/wallet-adapter-phantom` - Phantom wallet
+- `@solana/wallet-adapter-solflare` - Solflare wallet
+- `@solana/wallet-adapter-glow` - Glow wallet
+- `@solana/wallet-adapter-backpack` - Backpack wallet
+- And many more wallet-specific adapters
+
+## Getting Started
+
+1. **Visit** [github.com/solana-labs/wallet-adapter](https://github.com/solana-labs/wallet-adapter)
+2. **Read the docs** at [github.com/solana-labs/wallet-adapter](https://github.com/solana-labs/wallet-adapter)
+3. **Install the packages** for your framework
+4. **Start integrating** wallet connections
+
+<CardGroup cols={2}>
+  <Card
+    title="GitHub"
+    icon="code-branch"
+    href="https://github.com/solana-labs/wallet-adapter"
+  >
+    Solana Wallet Adapter repository
+  </Card>
+  <Card
+    title="Documentation"
+    icon="book"
+    href="https://github.com/solana-labs/wallet-adapter"
+  >
+    Complete Wallet Adapter documentation
+  </Card>
+</CardGroup>
+

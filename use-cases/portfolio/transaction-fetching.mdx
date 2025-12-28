@@ -1,0 +1,45 @@
+---
+title: "Transaction fetching"
+description: "Find APIs for retrieving transaction history and data."
+icon: "clock-rotate-left"
+---
+
+## Transaction Fetching APIs
+
+### Helius
+
+#### Transaction Parsing API
+- **Get Transaction History**: Retrieve transaction history for addresses
+- **Get Transaction Details**: Get detailed transaction information
+
+
+### Birdeye
+
+#### Wallet Transactions API
+- **Get Wallet Transactions**: `GET /wallet/transactions` - Get transaction history for a wallet
+  - Parameters: Wallet address, filters
+  - Returns: Transaction history with details
+- **Get Wallet First Transaction Funded**: `GET /wallet/first-tx-funded` - Get first funding event
+  - Parameters: Wallet address(es)
+  - Returns: First funding event for wallet(s)
+
+
+### Moralis
+
+#### Transaction API
+- **Get Transaction History**: Retrieve transaction history for addresses
+- **Get Transaction Details**: Get detailed transaction information
+
+
+### QuickNode
+
+#### Transaction API
+- **Get Transaction**: Retrieve transaction details
+- **Get Transaction History**: Get transaction history for addresses
+
+
+### Phantom
+
+#### Wallet State Streams
+- **Transaction Streams**: Stream transaction events as they occur
+

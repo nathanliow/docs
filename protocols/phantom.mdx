@@ -1,0 +1,116 @@
+---
+title: "Phantom"
+description: ""
+icon: "wallet"
+---
+
+
+<img src="/images/phantom-logo.svg" alt="Phantom Logo" style={{ height: '60px', marginBottom: '1rem', display: 'block' }}/>
+
+Phantom is a leading crypto wallet supporting multiple blockchains including Solana, Ethereum, Bitcoin, Base, Polygon, Sui, and Monad. Phantom provides comprehensive SDKs for integrating wallet functionality into web and mobile applications.
+
+## Overview
+
+Phantom offers developers powerful tools to integrate wallet functionality:
+
+- **Multi-chain Support**: Solana, Ethereum, Bitcoin, Base, Polygon, Sui, and Monad
+- **Wallet Connection**: Easy wallet connection and authentication
+- **Transaction Signing**: Sign and send transactions across supported chains
+- **Token Management**: Access and manage tokens and NFTs
+- **Cross-chain Operations**: Seamless multi-chain interactions
+
+## SDKs & Clients
+
+Phantom provides Connect SDKs for integrating wallet functionality into web and mobile applications. These SDKs enable authentication with Google or Apple and automatically create embedded wallets, while also supporting connections to existing Phantom extension wallets.
+
+### React SDK
+
+Use the React SDK when building React web apps that need wallet connectivity. It provides React hooks for integration with your component architecture.
+
+**Package**: `@phantom-wallet/react`
+
+**Installation**:
+```bash
+npm install @phantom-wallet/react
+```
+
+**Usage**:
+```jsx
+import { usePhantom } from '@phantom-wallet/react';
+
+function App() {
+  const { connect, disconnect, publicKey, isConnected } = usePhantom();
+
+  return (
+    <button onClick={connect}>
+      {isConnected ? `Connected: ${publicKey}` : 'Connect Phantom'}
+    </button>
+  );
+}
+```
+
+### React Native SDK
+
+Use the Phantom Connect React Native SDK to build native mobile wallet experiences on iOS and Android with React Native. Supports secure OAuth authentication with Google and Apple.
+
+**Package**: `@phantom-wallet/react-native`
+
+**Installation**:
+```bash
+npm install @phantom-wallet/react-native
+```
+
+**Usage**:
+```jsx
+import { usePhantom } from '@phantom-wallet/react-native';
+
+function MobileApp() {
+  const { connect, publicKey } = usePhantom();
+  // Use in React Native mobile apps
+}
+```
+
+### Browser SDK
+
+Use the Phantom Connect Browser SDK for JavaScript/TypeScript apps or any web framework that isn't React (such as Vue, Angular, Svelte).
+
+**Package**: `@phantom-wallet/browser`
+
+**Installation**:
+```bash
+npm install @phantom-wallet/browser
+```
+
+**Usage**:
+```javascript
+import { PhantomWalletAdapter } from '@phantom-wallet/browser';
+
+const adapter = new PhantomWalletAdapter();
+await adapter.connect();
+const publicKey = adapter.publicKey;
+```
+
+## Getting Started
+
+1. **Visit** [phantom.app](https://phantom.app)
+2. **Read the docs** at [docs.phantom.com](https://docs.phantom.com)
+3. **Install the SDK** for your platform
+4. **Start integrating** wallet functionality
+
+<CardGroup cols={2}>
+  <Card
+    title="Developer Documentation"
+    icon="book"
+    href="https://docs.phantom.com"
+  >
+    Complete Phantom developer guide
+  </Card>
+  <Card
+    title="GitHub"
+    icon="code-branch"
+    href="https://github.com/phantom-labs"
+  >
+    Phantom SDK repositories
+  </Card>
+</CardGroup>
+

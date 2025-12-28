@@ -1,0 +1,130 @@
+---
+title: "Privacy Cash"
+description: ""
+icon: "shield"
+---
+
+
+<img src="/images/privacy-cash-logo.jpg" alt="Privacy Cash Logo" style={{ height: '60px', marginBottom: '1rem', display: 'block' }}/>
+
+Privacy Cash is a privacy protocol on Solana that enables confidential transactions using zero-knowledge proofs. Users can shield and withdraw SOL and USDC while maintaining transaction privacy, ensuring that transaction amounts and participants remain private.
+
+## Overview
+
+Privacy Cash implements a privacy protocol on Solana that allows users to:
+
+- **Shield SOL**: Deposit SOL into a privacy pool, generating a commitment that is added to a Merkle tree
+- **Withdraw SOL**: Withdraw SOL from the privacy pool to any recipient address using zero-knowledge proofs
+- **Shield USDC**: Deposit USDC into a privacy pool
+- **Withdraw USDC**: Withdraw USDC from the privacy pool to any recipient address
+- **Zero-Knowledge Proofs**: Uses zero-knowledge proofs to ensure that withdrawals cannot be linked to deposits, providing privacy for Solana transactions
+
+## APIs
+
+### Transactions
+
+APIs for privacy transactions:
+
+#### SOL Operations
+- **deposit()**: Deposit SOL into privacy pools (shield)
+- **withdraw()**: Withdraw SOL from privacy pools to recipient address (unshield)
+- **getPrivateBalance()**: Get private SOL balance in privacy pools
+
+#### USDC Operations
+- **depositUSDC()**: Deposit USDC into privacy pools (shield)
+- **withdrawUSDC()**: Withdraw USDC from privacy pools to recipient address (unshield)
+- **getPrivateBalanceUSDC()**: Get private USDC balance in privacy pools
+
+## SDKs & Clients
+
+### JavaScript/TypeScript
+
+**Package**: `privacycash`
+
+**Installation**:
+```bash
+npm install privacycash
+```
+
+**Usage**:
+```javascript
+import { PrivacyCash } from 'privacycash';
+
+async function main() {
+  let client = new PrivacyCash({
+    RPC_url: '[YOUR_SOLANA_MAINNET_RPC_URL]',
+    owner: '[YOUR_PRIVATE_KEY]'
+  });
+
+  // Historical UTXOs will be cached locally for faster performance.
+  // You don't need to call clearCache() unless you encountered some issues and want to do a full refresh.
+  // client.clearCache()
+
+  // Deposit SOL
+  let depositRes = await client.deposit({
+    lamports: 0.02 * 1_000_000_000
+  });
+  console.log(depositRes);
+
+  let balance = await client.getPrivateBalance();
+  console.log('balance after deposit:', balance, balance.lamports / 1_000_000_000);
+
+  // Withdraw SOL
+  let withdrawRes = await client.withdraw({
+    lamports: 0.01 * 1_000_000_000,
+    recipientAddress: '[RECIPIENT_ADDRESS]'
+  });
+  console.log(withdrawRes);
+
+  balance = await client.getPrivateBalance();
+  console.log('balance after withdraw:', balance, balance.lamports / 1_000_000_000);
+
+  // Get USDC balance
+  let usdcBalance = await client.getPrivateBalanceUSDC();
+  console.log('USDC balance:', usdcBalance, usdcBalance.base_units / 1e6);
+
+  // Deposit USDC
+  let depositUSDCRes = await client.depositUSDC({
+    base_units: 2 * 1e6
+  });
+  console.log(depositUSDCRes);
+
+  // Withdraw USDC
+  let withdrawUSDCRes = await client.withdrawUSDC({
+    base_units: 2 * 1e6,
+    recipientAddress: '[RECIPIENT_ADDRESS]'
+  });
+  console.log(withdrawUSDCRes);
+}
+
+main();
+```
+
+## Getting Started
+
+1. **Install the SDK**: `npm install privacycash`
+2. **Check the example project** in the [GitHub repository](https://github.com/Privacy-Cash/privacy-cash-sdk) under `/example` folder
+3. **Use Node version 24 or above**
+4. **Start building** privacy-preserving applications
+
+<Note>
+Historical UTXOs are cached locally for faster performance. You don't need to call `clearCache()` unless you encounter issues and want to do a full refresh.
+</Note>
+
+<CardGroup cols={2}>
+  <Card
+    title="GitHub Repository"
+    icon="code-branch"
+    href="https://github.com/Privacy-Cash/privacy-cash-sdk"
+  >
+    Privacy Cash SDK source code
+  </Card>
+  <Card
+    title="Example Project"
+    icon="code"
+    href="https://github.com/Privacy-Cash/privacy-cash-sdk/tree/main/example"
+  >
+    See example usage in the repository
+  </Card>
+</CardGroup>
+

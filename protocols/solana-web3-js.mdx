@@ -1,0 +1,70 @@
+---
+title: "Solana Web3.js"
+description: ""
+icon: "code"
+---
+
+<img src="/images/solana-logo.svg" alt="Solana Logo" style={{ height: '60px', marginBottom: '1rem', display: 'block' }}/>
+
+Solana Web3.js is the official JavaScript library for interacting with the Solana blockchain. It provides a complete set of tools for building Solana applications, including RPC client, transaction building, and wallet integration.
+
+## Overview
+
+Solana Web3.js provides developers with the core JavaScript library for Solana development:
+
+- **RPC Client**: Complete Solana RPC API client
+- **Transaction Building**: Build, sign, and send transactions
+- **Account Management**: Create and manage accounts
+- **Program Interaction**: Interact with Solana programs
+- **Wallet Integration**: Connect and use wallets
+- **Type Definitions**: Full TypeScript support
+
+## SDKs & Clients
+
+### JavaScript/TypeScript
+
+**Package**: `@solana/web3.js`
+
+**Installation**:
+```bash
+npm install @solana/web3.js
+```
+
+**Usage**:
+```javascript
+import { Connection, PublicKey, Transaction } from '@solana/web3.js';
+
+const connection = new Connection('https://api.mainnet-beta.solana.com');
+
+// Get balance
+const balance = await connection.getBalance(publicKey);
+
+// Send transaction
+const transaction = new Transaction().add(instruction);
+const signature = await connection.sendTransaction(transaction, [signer]);
+```
+
+## Getting Started
+
+1. **Visit** [solana.com](https://solana.com)
+2. **Read the docs** at [solana-labs.github.io/web3.js](https://solana-labs.github.io/web3.js)
+3. **Install the library** for your project
+4. **Start building** Solana applications
+
+<CardGroup cols={2}>
+  <Card
+    title="Documentation"
+    icon="book"
+    href="https://solana-labs.github.io/web3.js"
+  >
+    Complete Solana Web3.js documentation
+  </Card>
+  <Card
+    title="GitHub"
+    icon="code-branch"
+    href="https://github.com/solana-labs/solana-web3.js"
+  >
+    Solana Web3.js repository
+  </Card>
+</CardGroup>
+

@@ -1,0 +1,190 @@
+---
+title: "QuickNode"
+description: ""
+icon: "bolt"
+---
+
+
+<img src="/images/quicknode-logo.svg" alt="QuickNode Logo" style={{ height: '60px', marginBottom: '1rem', display: 'block' }}/>
+
+QuickNode is a blockchain infrastructure provider offering high-performance RPC endpoints, enhanced APIs, and developer tools for Solana and other blockchains. QuickNode provides reliable, scalable infrastructure for building Web3 applications.
+
+## Overview
+
+QuickNode provides developers with powerful infrastructure tools:
+
+- **High-Performance RPC**: Fast and reliable RPC endpoints
+- **Enhanced APIs**: Additional APIs beyond standard RPC methods
+- **Multi-chain Support**: Solana, Ethereum, Polygon, BSC, and more
+- **Analytics Dashboard**: Monitor usage and performance
+- **Dedicated Nodes**: Custom node infrastructure for enterprise needs
+
+## APIs
+
+### Tokens
+
+<Expandable title="Token API">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Token Metadata | RPC | Retrieve token information |
+| Get Token Balances | RPC | Get token balances for addresses |
+| Get Token Accounts | RPC | Get token account information |
+
+</Expandable>
+
+### Transactions
+
+<Expandable title="Transaction API">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Transaction | RPC | Retrieve transaction details |
+| Get Transaction History | RPC | Get transaction history for addresses |
+| Send Transaction | RPC | Send transactions to the network |
+
+</Expandable>
+
+### Webhooks
+
+<Expandable title="Enhanced Webhooks">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Transaction Webhooks | Webhook | Receive notifications for specific transactions |
+| Account Webhooks | Webhook | Get notified of account changes |
+| Program Webhooks | Webhook | Monitor program events |
+| Custom Filters | Webhook | Configure webhooks with custom filters |
+
+</Expandable>
+
+### Streaming
+
+<Expandable title="WebSocket Streams">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Transaction Streams | WebSocket | Stream transaction data as it happens |
+| Account Change Streams | WebSocket | Receive account updates in real-time |
+| Program Event Streams | WebSocket | Stream events from specific programs |
+
+</Expandable>
+
+### RPC Methods
+
+<Expandable title="Standard Solana RPC Methods">
+
+QuickNode supports all standard Solana RPC methods:
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| getAccountInfo | RPC | Get account information |
+| getBalance | RPC | Get account balance |
+| getBlock | RPC | Get block information |
+| getTransaction | RPC | Get transaction details |
+| sendTransaction | RPC | Send transaction to network |
+| getProgramAccounts | RPC | Get program accounts |
+| getTokenAccountsByOwner | RPC | Get token accounts by owner |
+| All other standard Solana RPC methods | RPC | Full Solana RPC API support |
+
+</Expandable>
+
+## Services
+
+### Dedicated Nodes
+
+QuickNode offers dedicated node infrastructure:
+
+**Features:**
+- Single-tenant node infrastructure
+- Custom configuration options
+- High availability and reliability
+- Priority support
+- Custom RPC endpoints
+
+**Specifications:**
+- Standard tier: Single dedicated node
+- Premium tier: High-performance nodes with enhanced specs
+- Enterprise tier: Custom configurations and multi-node setups
+
+### Analytics Dashboard
+
+Monitor and analyze your API usage:
+- Request metrics and analytics
+- Performance monitoring
+- Usage tracking
+- Error logging
+
+## SDKs & Clients
+
+### JavaScript/TypeScript
+
+**Package**: Use `@solana/web3.js` with QuickNode RPC endpoint
+
+**Installation**:
+```bash
+npm install @solana/web3.js
+```
+
+**Usage**:
+```javascript
+import { Connection } from '@solana/web3.js';
+
+const connection = new Connection('https://your-endpoint.solana-mainnet.quiknode.pro/YOUR_API_KEY');
+// Use standard Solana RPC methods
+```
+
+### Python
+
+**Package**: `solana-py` with QuickNode RPC endpoint
+
+**Installation**:
+```bash
+pip install solana
+```
+
+**Usage**:
+```python
+from solana.rpc.api import Client
+
+client = Client('https://your-endpoint.solana-mainnet.quiknode.pro/YOUR_API_KEY')
+# Use standard Solana RPC methods
+```
+
+### REST API
+
+Direct REST API access:
+- Base URL: Your QuickNode endpoint URL
+- Authentication: API key in URL or headers
+- Documentation: Available in QuickNode dashboard
+
+### WebSocket Client
+
+For WebSocket connections:
+- WebSocket URL: `wss://your-endpoint.solana-mainnet.quiknode.pro/YOUR_API_KEY`
+- Supports standard WebSocket libraries in any language
+
+## Getting Started
+
+1. **Sign up** at [quicknode.com](https://quicknode.com)
+2. **Create an endpoint** in the dashboard
+3. **Get your API key** and endpoint URL
+4. **Start building** with QuickNode infrastructure
+
+<CardGroup cols={2}>
+  <Card
+    title="Documentation"
+    icon="book"
+    href="https://www.quicknode.com/docs"
+  >
+    Complete QuickNode documentation
+  </Card>
+  <Card
+    title="Dashboard"
+    icon="chart-line"
+    href="https://dashboard.quicknode.com"
+  >
+    Manage your QuickNode account
+  </Card>
+</CardGroup>
+

@@ -1,0 +1,281 @@
+---
+title: "Privy"
+description: ""
+icon: "shield"
+---
+
+<img src="/images/privy-logo.png" alt="Privy Logo" style={{ height: '60px', marginBottom: '1rem', display: 'block' }}/>
+
+Privy is a wallet infrastructure platform that enables developers to create wallets, manage users, and handle transactions across multiple blockchains. Privy provides SDKs for client-side and server-side integration, along with a comprehensive REST API.
+
+## Overview
+
+Privy provides developers with comprehensive wallet infrastructure:
+
+- **Multi-Chain Support**: Ethereum, Solana, Spark BTC, and other chains
+- **Wallet Management**: Create, import, export, and manage wallets
+- **User Management**: Create users with linked accounts and wallets
+- **Transaction Handling**: Sign messages and send transactions
+- **Policy Controls**: Create policies to control wallet spending and contract interaction
+- **Account Funding**: Native onramp and offramp capabilities
+- **KYC Integration**: Built-in KYC verification support
+
+## SDKs & Clients
+
+### Client-side SDKs
+
+#### React
+
+**Package**: `@privy-io/react-auth`
+
+**Installation**:
+```bash
+npm install @privy-io/react-auth
+```
+
+**Usage**:
+```jsx
+import { PrivyProvider } from '@privy-io/react-auth';
+
+function App() {
+  return (
+    <PrivyProvider appId="your-app-id">
+      <YourApp />
+    </PrivyProvider>
+  );
+}
+```
+
+#### React Native
+
+**Package**: `@privy-io/react-native`
+
+**Installation**:
+```bash
+npm install @privy-io/react-native
+```
+
+#### Swift
+
+**Package**: Privy iOS SDK
+
+**Installation**: Available via Swift Package Manager
+
+#### Android
+
+**Package**: Privy Android SDK
+
+**Installation**: Available via Maven/Gradle
+
+#### Flutter
+
+**Package**: Privy Flutter SDK
+
+**Installation**: Available via pub.dev
+
+#### Unity
+
+**Package**: Privy Unity SDK
+
+**Installation**: Available via Unity Package Manager
+
+### Server-side SDKs
+
+#### Node.js
+
+**Package**: `@privy-io/server-auth`
+
+**Installation**:
+```bash
+npm install @privy-io/server-auth
+```
+
+**Usage**:
+```javascript
+import { PrivyClient } from '@privy-io/server-auth';
+
+const client = new PrivyClient({
+  appId: 'your-app-id',
+  appSecret: 'your-app-secret'
+});
+```
+
+#### Python
+
+**Package**: `privy-python`
+
+**Installation**:
+```bash
+pip install privy-python
+```
+
+#### Java
+
+**Package**: Privy Java SDK
+
+**Installation**: Available via Maven
+
+#### Rust
+
+**Package**: `privy-rs`
+
+**Installation**:
+```bash
+cargo add privy-rs
+```
+
+## APIs
+
+### Wallets
+
+<Expandable title="Wallet APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create Wallet | POST | Create a new wallet |
+| Get Wallet | GET | Retrieve wallet details by ID |
+| Update Wallet | PATCH | Update wallet settings |
+| Get Wallets | GET | List all wallets |
+| Get Balance | GET | Get wallet balance |
+| Get Transactions | GET | Get wallet transaction history |
+| Export Wallet | POST | Export wallet |
+| Import Wallet | POST | Import an existing wallet |
+
+</Expandable>
+
+### Authentication
+
+<Expandable title="Authentication APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Authenticate (Ethereum) | POST | Authenticate with Ethereum wallet |
+| Authenticate (Solana) | POST | Authenticate with Solana wallet |
+| Authenticate (Spark BTC) | POST | Authenticate with Spark BTC wallet |
+| Authenticate (Other chains) | POST | Authenticate with other supported chains |
+
+</Expandable>
+
+### Account Funding
+
+<Expandable title="Account Funding APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Configure App for Native Onramp | POST | Configure app for native onramp |
+| Create Terms of Service Agreement | POST | Create TOS agreement |
+| Initiate Onramp | POST | Initiate onramp transaction |
+| Initiate Offramp | POST | Initiate offramp transaction |
+| Get Transactions | POST | Get funding transactions |
+
+</Expandable>
+
+### Policies
+
+<Expandable title="Policy APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create Policy | POST | Create a new policy |
+| Get Policy | GET | Retrieve policy details |
+| Update Policy | PATCH | Update policy settings |
+| Delete Policy | DELETE | Delete a policy |
+
+</Expandable>
+
+### Rules
+
+#### Condition Sets
+
+<Expandable title="Condition Set APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create Condition Set | POST | Create a new condition set |
+| Get Condition Set | GET | Retrieve condition set details |
+| Update Condition Set | PATCH | Update condition set |
+| Delete Condition Set | DELETE | Delete a condition set |
+
+</Expandable>
+
+#### Condition Set Items
+
+<Expandable title="Condition Set Item APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Manage Condition Set Items | POST/GET/PATCH/DELETE | Manage items within condition sets |
+
+</Expandable>
+
+### Transactions
+
+<Expandable title="Transaction APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Transaction | GET | Retrieve transaction details by ID |
+
+</Expandable>
+
+### Key Quorums
+
+<Expandable title="Key Quorum APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create Key Quorum | POST | Create a new key quorum |
+| Get Key Quorum | GET | Retrieve key quorum details |
+| Update Key Quorum | PATCH | Update key quorum settings |
+| Delete Key Quorum | DELETE | Delete a key quorum |
+
+</Expandable>
+
+### Users
+
+<Expandable title="User APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create User | POST | Create a new user |
+| Get User | GET | Retrieve user details by ID |
+| Get Users | GET | List all users |
+| Search Users | POST | Search for users |
+| Delete User | DELETE | Delete a user |
+| Add Custom Metadata | POST | Add custom metadata to user |
+| Pregenerate Wallets | POST | Pregenerate wallets for users |
+
+</Expandable>
+
+### REST API
+
+Direct REST API access:
+- Base URL: `https://api.privy.io/v1`
+- Authentication: API credentials required
+- Documentation: Available at [docs.privy.io](https://docs.privy.io)
+
+## Getting Started
+
+1. **Visit** [privy.io](https://privy.io)
+2. **Read the docs** at [docs.privy.io](https://docs.privy.io)
+3. **Get API credentials** from the dashboard
+4. **Install the SDK** for your platform
+5. **Start building** wallet integrations
+
+<CardGroup cols={2}>
+  <Card
+    title="Documentation"
+    icon="book"
+    href="https://docs.privy.io"
+  >
+    Complete Privy documentation
+  </Card>
+  <Card
+    title="Dashboard"
+    icon="chart-line"
+    href="https://dashboard.privy.io"
+  >
+    Manage your Privy account
+  </Card>
+</CardGroup>
+

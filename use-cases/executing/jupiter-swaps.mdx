@@ -1,0 +1,27 @@
+---
+title: "Jupiter swaps"
+description: "Find APIs for executing token swaps using Jupiter."
+icon: "right-left"
+---
+
+## Jupiter Swap APIs
+
+### Jupiter
+
+#### Swap API
+- **Execute Swap**: `POST /swap` - Execute a swap transaction
+  - Parameters: Quote response, user wallet
+  - Returns: Transaction signature
+
+
+#### Limit Order API
+- **Create Limit Order**: `POST /limit-order` - Place a limit order
+  - Parameters: Token pair, price, amount
+  - Returns: Order ID
+
+
+#### DCA (Dollar Cost Averaging) API
+- **Create DCA Plan**: `POST /dca` - Create automated recurring swaps
+  - Parameters: Token pair, amount, frequency
+  - Returns: DCA plan ID
+

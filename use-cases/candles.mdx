@@ -1,0 +1,32 @@
+---
+title: "Candles"
+description: "Find the right APIs for retrieving candlestick (OHLCV) data for price charts and analysis."
+icon: "chart-bar"
+---
+
+## Price History & Candles
+
+APIs for historical price data and candlestick information:
+
+### Moralis
+
+#### Candlestick API
+- **Get Candlestick Data**: `GET /candlestick` - Get historical price data in candlestick format
+  - Parameters: Symbol, interval (1m, 5m, 15m, 1h, 4h, 1d), from, to
+  - Returns: OHLCV (Open, High, Low, Close, Volume) data
+
+
+### Birdeye
+
+#### Token Price API
+- **Get Token Price History**: `GET /token/pricehistory` - Get historical price data
+  - Parameters: Token address, time range
+  - Returns: Historical price data with timestamps
+
+
+### Helius
+
+#### Token API
+- **Get Token Prices**: Get real-time and historical token prices
+
+

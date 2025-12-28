@@ -1,0 +1,175 @@
+---
+title: "Moralis"
+description: ""
+icon: "database"
+---
+
+
+<img src="/images/moralis-logo.svg" alt="Moralis Logo" style={{ height: '60px', marginBottom: '1rem', display: 'block' }}/>
+
+Moralis is a comprehensive Web3 development platform that provides APIs, SDKs, and infrastructure for building on Solana and other blockchains. Moralis offers powerful tools for token data, NFT management, transaction history, and market analytics.
+
+## Overview
+
+Moralis provides developers with a unified platform for Web3 development:
+
+- **Multi-chain Support**: Solana, Ethereum, Polygon, BSC, Avalanche, and more
+- **Token & NFT APIs**: Comprehensive token and NFT data and metadata
+- **Transaction APIs**: Transaction history and parsing
+- **Market Data**: Price feeds, candlestick data, and market analytics
+- **Real-time Updates**: WebSocket support for live data
+
+## APIs
+
+### Tokens
+
+APIs for token and NFT data:
+
+#### Token API
+- **Get Token Metadata**: Retrieve token information and metadata
+- **Get Token Price**: Get current token prices
+- **Get Token Balances**: Get token balances for addresses
+- **Get Token Transfers**: Track token transfer history
+
+#### NFT API
+- **Get NFTs**: Retrieve NFT collections and individual NFTs
+- **Get NFT Metadata**: Get detailed NFT metadata
+- **Get NFT Owners**: Find owners of specific NFTs
+- **Get NFT Transfers**: Track NFT transfer history
+
+### Transactions
+
+APIs for transaction data:
+
+#### Transaction API
+- **Get Transaction History**: Retrieve transaction history for addresses
+- **Get Transaction Details**: Get detailed transaction information
+- **Parse Transactions**: Parse and decode transaction data
+
+### Webhooks
+
+Webhook services for real-time notifications:
+
+#### Event Webhooks
+- **Token Transfer Webhooks**: Receive notifications for token transfers
+- **NFT Transfer Webhooks**: Get notified of NFT transfers
+- **Transaction Webhooks**: Receive notifications for transactions
+- **Custom Event Webhooks**: Configure webhooks for custom events
+
+### Streaming
+
+Real-time data streaming services:
+
+#### WebSocket Streams
+- **Token Price Streams**: Real-time price updates for tokens
+- **Transaction Streams**: Stream transaction events as they occur
+- **NFT Streams**: Real-time NFT event streams
+
+### Market Data
+
+Moralis-specific market data APIs:
+
+#### Candlestick API
+- **Get Candlestick Data**: `GET /candlestick` - Get historical price data in candlestick format
+  - Parameters: Symbol, interval (1m, 5m, 15m, 1h, 4h, 1d), from, to
+  - Returns: OHLCV (Open, High, Low, Close, Volume) data
+
+
+#### Price API
+- **Get Token Prices**: Get current and historical token prices
+- **Get Multiple Token Prices**: Get prices for multiple tokens in one request
+- **Get Price History**: Get historical price data
+
+## SDKs & Clients
+
+### JavaScript/TypeScript
+
+**Package**: `moralis` or `@moralisweb3/common-solana-utils`
+
+**Installation**:
+```bash
+npm install moralis
+```
+
+**Usage**:
+```javascript
+import Moralis from 'moralis';
+
+await Moralis.start({
+  apiKey: 'YOUR_API_KEY'
+});
+
+// Get token metadata
+const metadata = await Moralis.SolanaAPI.account.getSPL({
+  network: 'mainnet',
+  address: 'token_address'
+});
+
+// Get candlestick data
+const candles = await Moralis.SolanaAPI.market.getCandlestick({
+  network: 'mainnet',
+  symbol: 'SOL/USD',
+  interval: '1h'
+});
+```
+
+### Python
+
+**Package**: `moralis`
+
+**Installation**:
+```bash
+pip install moralis
+```
+
+**Usage**:
+```python
+from moralis import solana_api
+
+# Get token metadata
+result = solana_api.account.get_spl(
+    api_key='YOUR_API_KEY',
+    network='mainnet',
+    address='token_address'
+)
+
+# Get candlestick data
+candles = solana_api.market.get_candlestick(
+    api_key='YOUR_API_KEY',
+    network='mainnet',
+    symbol='SOL/USD',
+    interval='1h'
+)
+```
+
+### REST API
+
+Direct REST API access:
+- Base URL: `https://solana-api.moralis.io`
+- Authentication: API key in headers
+- Documentation: Available in API docs
+
+## Getting Started
+
+1. **Sign up** at [moralis.io](https://moralis.io)
+2. **Get your API key** from the dashboard
+3. **Choose your plan** (free tier available)
+4. **Start building** with Moralis APIs
+
+<CardGroup cols={2}>
+  <Card
+    title="API Documentation"
+    icon="code"
+    href="https://docs.moralis.io"
+  >
+    Complete Moralis API reference
+  </Card>
+  <Card
+    title="Dashboard"
+    icon="chart-line"
+    href="https://admin.moralis.io"
+  >
+    Access your Moralis account
+  </Card>
+</CardGroup>
+

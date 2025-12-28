@@ -1,0 +1,467 @@
+---
+title: "Wallets"
+description: "Find the right APIs and SDKs for wallet generation, authentication, signing, and wallet management across all supported providers."
+icon: "wallet"
+---
+
+## Wallet Generation
+
+APIs and SDKs for creating, importing, and managing wallets.
+
+### Privy
+
+#### Wallet APIs
+
+<Expandable title="Wallet Generation APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create Wallet | POST | Create a new wallet |
+| Import Wallet | POST | Import an existing wallet |
+| Export Wallet | POST | Export wallet |
+| Get Wallet | GET | Retrieve wallet details by ID |
+| Get Wallets | GET | List all wallets |
+| Update Wallet | PATCH | Update wallet settings |
+
+</Expandable>
+
+### Turnkey
+
+#### Wallet APIs
+
+<Expandable title="Wallet Generation APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create Wallet | POST | Create a new wallet |
+| Import Wallet | POST | Import an existing wallet |
+| Init Import Wallet | POST | Initialize wallet import |
+| Export Wallet | POST | Export a wallet |
+| Get Wallet | GET | Retrieve wallet details |
+| List Wallets | GET | List all wallets |
+| Update Wallet | PATCH | Update wallet settings |
+| Delete Wallets | POST | Delete wallets |
+| Create Wallet Accounts | POST | Create accounts within a wallet |
+| Get Wallet Account | GET | Retrieve wallet account details |
+| List Wallets Accounts | GET | List all wallet accounts |
+| Export Wallet Account | POST | Export a wallet account |
+| Delete Wallet Accounts | POST | Delete wallet accounts |
+
+</Expandable>
+
+#### Private Key APIs
+
+<Expandable title="Private Key Management APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create Private Keys | POST | Create new private keys |
+| Import Private Key | POST | Import an existing private key |
+| Init Import Private Key | POST | Initialize private key import |
+| Export Private Key | POST | Export a private key |
+| Get Private Key | GET | Retrieve private key details |
+| List Private Keys | GET | List all private keys |
+| Delete Private Keys | POST | Delete private keys |
+| Create Private Key Tag | POST | Create a tag for private keys |
+| Update Private Key Tag | PATCH | Update private key tag |
+| Delete Private Key Tags | POST | Delete private key tags |
+| List Private Key Tags | GET | List all private key tags |
+
+</Expandable>
+
+## Authentication
+
+APIs and SDKs for connecting wallets, authenticating users, and managing wallet connections.
+
+### Solana Wallet Adapter
+
+#### Wallet Connection
+
+<Expandable title="Wallet Connection APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Connect | Method | Connect to a wallet |
+| Disconnect | Method | Disconnect from wallet |
+| Auto Connect | Option | Automatically connect on page load |
+| Select Wallet | Method | Select a specific wallet adapter |
+
+</Expandable>
+
+**Usage**:
+```typescript
+import { useWallet } from '@solana/wallet-adapter-react';
+
+function MyComponent() {
+  const { connect, disconnect, connected, publicKey } = useWallet();
+  
+  const handleConnect = async () => {
+    await connect();
+  };
+  
+  return (
+    <button onClick={connected ? disconnect : handleConnect}>
+      {connected ? 'Disconnect' : 'Connect Wallet'}
+    </button>
+  );
+}
+```
+
+### Privy
+
+#### Authentication APIs
+
+<Expandable title="Authentication APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Authenticate (Ethereum) | POST | Authenticate with Ethereum wallet |
+| Authenticate (Solana) | POST | Authenticate with Solana wallet |
+| Authenticate (Spark BTC) | POST | Authenticate with Spark BTC wallet |
+| Authenticate (Other chains) | POST | Authenticate with other supported chains |
+
+</Expandable>
+
+#### User Management APIs
+
+<Expandable title="User Management APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create User | POST | Create a new user with linked accounts and wallets |
+| Get User | GET | Retrieve user details by ID |
+| Get Users | GET | List all users |
+| Search Users | POST | Search for users |
+| Delete User | DELETE | Delete a user |
+| Add Custom Metadata | POST | Add custom metadata to user |
+
+</Expandable>
+
+### Turnkey
+
+#### Authentication APIs
+
+<Expandable title="Authentication APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create Authenticators | POST | Create new authenticators |
+| Get Authenticator | GET | Retrieve authenticator details |
+| Get Authenticators | GET | List all authenticators |
+| Delete Authenticators | POST | Delete authenticators |
+| Init OTP Auth | POST | Initialize OTP authentication |
+| OTP Auth | POST | Perform OTP authentication |
+| Login with OTP | POST | Login using OTP |
+| Login with Oauth | POST | Login using OAuth |
+| Login with a Stamp | POST | Login using a stamp |
+| OAuth 2.0 Authentication | POST | Authenticate with OAuth 2.0 |
+| Perform Email Auth | POST | Perform email authentication |
+| Init Email Recovery | POST | Initialize email recovery |
+| Recover a User | POST | Recover a user account |
+| Verify Generic OTP | POST | Verify a generic OTP code |
+| Init Generic OTP | POST | Initialize generic OTP |
+
+</Expandable>
+
+#### OAuth APIs
+
+<Expandable title="OAuth APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create Oauth Providers | POST | Create OAuth providers |
+| Delete Oauth Providers | POST | Delete OAuth providers |
+| Get Oauth Providers | GET | List OAuth providers |
+| Create OAuth 2.0 Credential | POST | Create OAuth 2.0 credential |
+| Update OAuth 2.0 Credential | PATCH | Update OAuth 2.0 credential |
+| Delete OAuth 2.0 Credential | DELETE | Delete OAuth 2.0 credential |
+| Get OAuth 2.0 Credential | GET | Get OAuth 2.0 credential |
+| List OAuth 2.0 Credentials | GET | List all OAuth 2.0 credentials |
+
+</Expandable>
+
+#### User APIs
+
+<Expandable title="User Management APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create Users | POST | Create new users |
+| Get User | GET | Retrieve user details |
+| List Users | GET | List all users |
+| Update User | PATCH | Update user information |
+| Delete Users | POST | Delete users |
+| Update User's Email | PATCH | Update user email address |
+| Update User's Name | PATCH | Update user name |
+| Update User's Phone Number | PATCH | Update user phone number |
+| Create User Tag | POST | Create a tag for users |
+| Update User Tag | PATCH | Update user tag |
+| Delete User Tags | POST | Delete user tags |
+| List User Tags | GET | List all user tags |
+
+</Expandable>
+
+#### Session APIs
+
+<Expandable title="Session APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Create Read Only Session | POST | Create a read-only session |
+| Create Read Write Session | POST | Create a read-write session |
+
+</Expandable>
+
+## Signing
+
+APIs and SDKs for signing transactions, messages, and raw payloads.
+
+### Solana Wallet Adapter
+
+#### Transaction Signing
+
+<Expandable title="Signing APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Sign Transaction | Method | Sign a transaction |
+| Sign All Transactions | Method | Sign multiple transactions |
+| Sign Message | Method | Sign a message |
+
+</Expandable>
+
+**Usage**:
+```typescript
+import { useWallet } from '@solana/wallet-adapter-react';
+import { Transaction } from '@solana/web3.js';
+
+function MyComponent() {
+  const { signTransaction, publicKey } = useWallet();
+  
+  const handleSign = async () => {
+    const transaction = new Transaction();
+    // Add instructions to transaction
+    const signed = await signTransaction(transaction);
+    // Send signed transaction
+  };
+  
+  return <button onClick={handleSign}>Sign Transaction</button>;
+}
+```
+
+### Privy
+
+#### Transaction Signing
+
+<Expandable title="Transaction Signing APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Sign Message | POST | Sign a message using personal_sign |
+| Send Transaction | POST | Send a transaction using eth_sendTransaction |
+
+</Expandable>
+
+**SDK Usage (React)**:
+```jsx
+import { usePrivy } from '@privy-io/react-auth';
+import { useWallets } from '@privy-io/react-auth';
+
+function MyComponent() {
+  const { ready, authenticated } = usePrivy();
+  const { wallets } = useWallets();
+  
+  const handleSignMessage = async () => {
+    const wallet = wallets[0];
+    if (!wallet) return;
+    
+    // Sign a message
+    const signature = await wallet.signMessage({
+      message: 'Hello from Privy!',
+      encoding: 'utf-8'
+    });
+    
+    console.log('Signature:', signature);
+  };
+  
+  const handleSendTransaction = async () => {
+    const wallet = wallets[0];
+    if (!wallet) return;
+    
+    // Send a transaction
+    const txHash = await wallet.sendTransaction({
+      to: '0x...',
+      value: '1000000000000000',
+      chainType: 'ethereum'
+    });
+    
+    console.log('Transaction hash:', txHash);
+  };
+  
+  return (
+    <div>
+      <button onClick={handleSignMessage}>Sign Message</button>
+      <button onClick={handleSendTransaction}>Send Transaction</button>
+    </div>
+  );
+}
+```
+
+**SDK Usage (Server-side - Node.js)**:
+```javascript
+import { PrivyClient } from '@privy-io/server-auth';
+
+const client = new PrivyClient({
+  appId: 'your-app-id',
+  appSecret: 'your-app-secret'
+});
+
+// Sign a message
+const signature = await client.wallets.signMessage({
+  walletId: 'wallet-id',
+  message: 'Hello from Privy!',
+  encoding: 'utf-8'
+});
+
+// Send a transaction
+const txHash = await client.wallets.sendTransaction({
+  walletId: 'wallet-id',
+  method: 'eth_sendTransaction',
+  params: {
+    transaction: {
+      to: '0x...',
+      value: '1000000000000000'
+    }
+  },
+  chainType: 'ethereum'
+});
+```
+
+### Turnkey
+
+#### Transaction Signing
+
+<Expandable title="Transaction Signing APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Sign Transaction | POST | Sign a transaction |
+| Sign Raw Payload | POST | Sign a raw payload |
+| Sign Raw Payloads | POST | Sign multiple raw payloads |
+| Submit Transaction Intent | POST | Submit a transaction intent for broadcasting |
+| Submit Raw Transaction | POST | Submit a raw transaction for broadcasting |
+
+</Expandable>
+
+**SDK Usage (TypeScript/JavaScript)**:
+```typescript
+import { TurnkeyClient } from '@turnkey/server';
+
+const client = new TurnkeyClient({
+  apiKey: 'your-api-key',
+  apiSecret: 'your-api-secret'
+});
+
+// Sign a transaction
+const signedTx = await client.signTransaction({
+  walletId: 'wallet-id',
+  transaction: {
+    // Transaction data
+  }
+});
+
+// Sign a raw payload
+const signature = await client.signRawPayload({
+  walletId: 'wallet-id',
+  payload: Buffer.from('message to sign'),
+  encoding: 'hex'
+});
+
+// Submit a transaction
+const txHash = await client.submitTransaction({
+  walletId: 'wallet-id',
+  signedTransaction: signedTx
+});
+```
+
+**SDK Usage (Python)**:
+```python
+from turnkey import TurnkeyClient
+
+client = TurnkeyClient(
+    api_key='your-api-key',
+    api_secret='your-api-secret'
+)
+
+# Sign a transaction
+signed_tx = client.sign_transaction(
+    wallet_id='wallet-id',
+    transaction={
+        # Transaction data
+    }
+)
+
+# Sign a raw payload
+signature = client.sign_raw_payload(
+    wallet_id='wallet-id',
+    payload=b'message to sign',
+    encoding='hex'
+)
+
+# Submit a transaction
+tx_hash = client.submit_transaction(
+    wallet_id='wallet-id',
+    signed_transaction=signed_tx
+)
+```
+
+**SDK Usage (React)**:
+```jsx
+import { useTurnkey } from '@turnkey/react';
+
+function MyComponent() {
+  const { signTransaction, signRawPayload } = useTurnkey();
+  
+  const handleSignTransaction = async () => {
+    const signedTx = await signTransaction({
+      walletId: 'wallet-id',
+      transaction: {
+        // Transaction data
+      }
+    });
+    
+    console.log('Signed transaction:', signedTx);
+  };
+  
+  const handleSignPayload = async () => {
+    const signature = await signRawPayload({
+      walletId: 'wallet-id',
+      payload: 'message to sign',
+      encoding: 'hex'
+    });
+    
+    console.log('Signature:', signature);
+  };
+  
+  return (
+    <div>
+      <button onClick={handleSignTransaction}>Sign Transaction</button>
+      <button onClick={handleSignPayload}>Sign Payload</button>
+    </div>
+  );
+}
+```
+
+#### Activity APIs
+
+<Expandable title="Activity Management APIs">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Approve Activity | POST | Approve a pending activity |
+| Reject Activity | POST | Reject a pending activity |
+| Get Activity | GET | Retrieve activity details by ID |
+| List Activities | GET | List all activities |
+
+</Expandable>
+
