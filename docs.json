@@ -39,6 +39,7 @@
                 ]
               },
               "use-cases/candles",
+              "use-cases/prices",
               "use-cases/prediction-markets",
               "use-cases/stablecoins",
               "use-cases/wallets",

@@ -1,0 +1,107 @@
+---
+title: "Prices"
+description: "Find APIs for getting Solana (SOL) and Solana token prices, including current prices, historical data, and real-time streaming."
+icon: "dollar-sign"
+---
+
+## Current Token Prices
+
+APIs for retrieving current token prices for SOL and SPL tokens.
+
+### Birdeye
+
+<Expandable title="Token Price API">
+
+| API Name | Type | Path | Description |
+|----------|------|------|-------------|
+| Get Token Price | GET | `/token/price` | Get current token price and market data |
+| Get Multiple Token Prices | GET | `/token/multiple-price` | Get prices for multiple tokens |
+
+</Expandable>
+
+### Jupiter
+
+<Expandable title="Price v3 API">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| price | GET | Get current token prices |
+
+</Expandable>
+
+### Moralis
+
+<Expandable title="Price API">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Token Prices | GET | Get current token prices |
+| Get Multiple Token Prices | GET | Get prices for multiple tokens in one request |
+
+</Expandable>
+
+## Price History
+
+APIs for retrieving historical price data and price charts.
+
+### Birdeye
+
+<Expandable title="Token Price History API">
+
+| API Name | Type | Path | Description |
+|----------|------|------|-------------|
+| Get Token Price History | GET | `/token/pricehistory` | Get historical price data |
+
+</Expandable>
+
+### Moralis
+
+<Expandable title="Price History API">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Get Price History | GET | Get historical price data |
+
+</Expandable>
+
+## Real-time Streaming
+
+Real-time price updates via WebSocket connections for live price feeds.
+
+### Birdeye
+
+<Expandable title="Price Streams">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Token Price Streams | WebSocket | Real-time price updates via WebSocket |
+| Market Data Streams | WebSocket | Stream market analytics and trends |
+
+</Expandable>
+
+### Jupiter
+
+<Expandable title="Price Streams">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Token Price Streams | WebSocket | Real-time price updates for tokens |
+| Market Data Streams | WebSocket | Stream market data and analytics |
+
+</Expandable>
+
+## Price Alerts
+
+Webhook services for receiving notifications when prices hit specific thresholds.
+
+### Birdeye
+
+<Expandable title="Price Webhooks">
+
+| API Name | Type | Description |
+|----------|------|-------------|
+| Token Price Alerts | Webhook | Receive notifications when token prices hit thresholds |
+| Market Event Webhooks | Webhook | Get notified of significant market events |
+
+</Expandable>
+
